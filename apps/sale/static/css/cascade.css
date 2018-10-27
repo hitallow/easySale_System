@@ -5,3 +5,26 @@
 .small-fiel-input{
     width:230px;
 }
+
+.header-welcome{
+    background-image: url('../imagens/py.jpg') ;
+    height:1001px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.center-align {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.welcome-title{
+	font-family: 'Pacifico', cursive;
+    }
+.welcome-description{
+	font-family: 'Indie Flower', cursive;
+	font-size: 30px;
+
+
+}
