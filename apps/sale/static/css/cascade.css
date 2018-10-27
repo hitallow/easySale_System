@@ -5,13 +5,14 @@
 .small-fiel-input{
     width:230px;
 }
-
+body , html{
+    height:100%;}
 .header-welcome{
     background-image: url('../imagens/py.jpg') ;
-    height:1001px;
+    height:100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+
 }
 .center-align {
     position: absolute;
