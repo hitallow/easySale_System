@@ -3,10 +3,9 @@ from django.db import models
 # Create your models here.
 
 class UserManager(models.Manager):
-    def searchForCpf(self , query):
+    def search(self , query):
         return self.get_queryset().filter( cpf__icontains=query  )
-    def searchForEmail(self , query):
-        return self.get_queryset().filter( email__icontains=query)
+
 
 
 
@@ -19,6 +18,10 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name = 'Usuário'
+        verbose_name_plural = 'Usuários'
+        ordering = ['name']
 
 class Product(models.Model):
     id = models.IntegerField(primary_key=True )
@@ -28,5 +31,11 @@ class Product(models.Model):
     cpfUserPost = models.ForeignKey(User, on_delete=models.CASCADE)
     tipyDept = models.CharField('Departamento' , null=False , blank=False , max_length=20)
     description = models.TextField('Descrição do produto' )
+
+
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name = 'Produto'
+        verbose_name_plural = 'Produtos'
+        ordering = ['id']
