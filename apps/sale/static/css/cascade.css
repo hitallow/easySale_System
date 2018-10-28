@@ -10,6 +10,7 @@ body , html{
 .header-welcome{
     background-image: url('../imagens/py.jpg') ;
     height:100%;
+
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -29,3 +30,4 @@ body , html{
 
 
 }
+
