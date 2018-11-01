@@ -27,7 +27,9 @@ body , html{
 .welcome-description{
 	font-family: 'Indie Flower', cursive;
 	font-size: 30px;
-
+}
+.imgProduct{
+    height:200px;
+    width:200px;
 
 }
-

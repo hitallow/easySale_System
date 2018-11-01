@@ -31,6 +31,7 @@ class Product(models.Model):
     cpfUserPost = models.ForeignKey(User, on_delete=models.CASCADE)
     tipyDept = models.CharField('Departamento' , null=False , blank=False , max_length=20)
     description = models.TextField('Descrição do produto' )
+    #juros = models.BooleanField( null=False , blank=False)
 
 
     def __str__(self):
