@@ -5,17 +5,18 @@
 {% load static %}
 
 
+# Tô começando essa página,
+# por enquanto, não mecha
+# na moral kkkk
 
 {%block contentPage%}
 <div class="container">
+
 {% for produto in produtos %}
+
     <div class="row">
-        <div class="col s3 ">
+        <div class="col s3">
             <img class="imgProduct" src="https://pbs.twimg.com/profile_images/446356636710363136/OYIaJ1KK_400x400.png">
-            
-            
-        </div>
-        <div class="col s6">
             <h3 class="titleProduct"> {{ produto.name }}</h3>
             <h5> R$: {{produto.preco}}</h5>
 
@@ -23,11 +24,16 @@
                 {{produto.description}}
             </p>
 
-
-
         </div>
+
     </div>
 {% endfor %}
+
+    <div class="row">
+        <div class="col s6">1</div>
+        <div class="col s6">2</div>
+
+    </div>
 
 </div>
 

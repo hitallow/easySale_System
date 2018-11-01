@@ -1,3 +1,7 @@
+*  {
+    margin:0;
+    padding:0;
+}
 
 .contentDropLogin{
     top:64px !important;
@@ -32,4 +36,10 @@ body , html{
     height:200px;
     width:200px;
 
+}
+/* Footer sempre colado ao fim da página */
+.footer{
+width: 101%;
+margin: -0% -1%;
+margin-bottom: -1%;
 }
