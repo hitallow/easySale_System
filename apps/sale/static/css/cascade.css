@@ -37,7 +37,7 @@ body , html{
     width:200px;
 
 }
-/* Footer sempre colado ao fim da página */
+/* Footer sem colado*/
 .footer{
 width: 101%;
 margin: -0% -1%;
