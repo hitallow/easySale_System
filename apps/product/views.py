@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
-from apps.user.models import Product
+# Views da app produto.
+
+from .models import Product
 def index(request):
     return render(request , 'home.html')
 
