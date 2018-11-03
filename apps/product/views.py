@@ -11,7 +11,9 @@ def login(request):
 
 def listAllProducts(request):
     produtos = Product.objects.all()
+
     context ={
         'produtos': produtos
     }
+
     return render(request ,'listProducts.html', context )
