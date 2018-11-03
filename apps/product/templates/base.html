@@ -16,7 +16,7 @@
     <nav>
         <div class="nav-wrapper grey darken-3 ">
             <div class="container">
-                <a href="{% url 'sale:index' %}" class="brand-logo">SuaVenda.com</a>
+                <a href="{% url 'product:index' %}" class="brand-logo">SuaVenda.com</a>
                 <ul class="right hide-on-med-and-down">
                     <li>
                         <form>
@@ -34,7 +34,7 @@
                             <li><a href="#!">Comida</a></li>
                             <li><a href="#!">Automotivo</a></li>
                             <li class="divider"></li>
-                            <li><a href=" {% url 'sale:allProducts' %}">Outros</a></li>
+                            <li><a href=" {% url 'product:allProducts' %}">Outros</a></li>
                         </ul>
                     </li>
                     <li><a href=" ">promoções</a></li>
@@ -43,7 +43,7 @@
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdownUser">Entre aqui<i
                             class="right material-icons">perm_identity</i></a>
                         <ul id="dropdownUser" class="dropdown-content contentDropLogin">
-                            <li><a href="{% url 'sale:login'%}">Fazer Login</a></li>
+                            <li><a href="{% url 'user:login' %}">Fazer Login</a></li>
                             <li><a href="#!">Recuperar senha</a></li>
                             <li><a href="#!">Recuperar Email</a></li>
 
