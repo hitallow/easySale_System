@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c018c21-9cee-48c5-8458-f95d86249bfa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/user/templates/user/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/user/templates/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/user/templates/user/user_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/templates/user_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easySale_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/easySale_System/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/templates/user/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +29,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="387" />
-          <entry key="html" value="3235" />
+          <entry key="html" value="3287" />
           <entry key="js" value="275" />
           <entry key="py" value="2188" />
         </counts>
@@ -46,7 +37,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="387" />
-          <entry key="HTML" value="3235" />
+          <entry key="HTML" value="3287" />
           <entry key="JavaScript" value="275" />
           <entry key="Python" value="2188" />
         </counts>
@@ -118,8 +109,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/user/templates/user/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="75">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -370,7 +361,7 @@
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24646313" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24646313" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -384,7 +375,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.58670986" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.58508915" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -652,8 +643,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/user/templates/user/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
         </state>
       </provider>
     </entry>
