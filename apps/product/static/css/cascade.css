@@ -2,6 +2,10 @@
     margin:0;
     padding:0;
 }
+html,body{
+
+
+}
 
 .contentDropLogin{
     top:64px !important;
@@ -35,8 +39,20 @@ body , html{
 .imgProduct{
     height:200px;
     width:200px;
-
 }
+.notProduts {
+    padding: 20px;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.4);
+}
+.box{
+    z-index: 1;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Footer sem colado*/
 .footer{
 width: 101%;
