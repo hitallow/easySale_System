@@ -9,5 +9,10 @@
   HTML;
   Python;
   SLQLite.
-  
+
+# REQUERIDO
+
+VENV (opcional)
+Django (obrigatório)
+Biblioteca Pillow (obrigatório)
  
