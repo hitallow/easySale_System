@@ -1,7 +1,12 @@
 *  {
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 html,body{
 
 
@@ -52,7 +57,14 @@ body , html{
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-
+.showProdutos{
+    display: flex;
+    border:10px solid black;
+}
+.flex-item{
+    border: 10px solid red;
+    padding: 10px;
+}
 /* Footer sem colado*/
 .footer{
 width: 101%;

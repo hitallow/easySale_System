@@ -26,28 +26,23 @@
       <a class="nav-item nav-link" href="#">Ofertas</a>
       <a class="nav-item nav-link" href="#">Departamentos</a>
     </div>
-    </div>
+      <div class="navbar-nav ml-auto">
+          <div class="nav-item">
+                <form>
+                    <input type="search" class='form-control' placeholder="pesquise aqui..">
+                </form>
+            </div>
+
+            <div class="nav-item">
+                <button type="button" class="btn btn-success" href="{% url 'user:login'%}">
+                    Fazer login
+                </button>
+            </div>
+
+      </div>
+  </div>
 </div>
 </nav>
-<nav class="navbar navbar-dark bg-primary ">
-    <div class='container'>
-        <div>
-            <form>
-            <input type="search" class='form-control' placeholder="pesquise aqui..">
-        </form>
-        </div>
-
-        <div class="ml-auto">
-            <button type="button" class="btn btn-success" href="{% url 'user:login'%}">
-                fazer login
-
-            </button>
-        </div>
-    </div>
-
-</nav>
-
-
 
 
 {%block contentPage%}{%endblock%}

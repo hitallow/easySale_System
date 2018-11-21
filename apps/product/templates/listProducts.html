@@ -13,40 +13,28 @@
 
 {%block contentPage%}
 <div class="container">
-
-{% for produto in produtos %}
-    <div class="row">
-        <div class="col m4">
-    <div class="card small">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator imgProduct" src={{ produto.image.url}}>
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">{{ produto.name}}<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">Compre aqui</a></p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{{ produto.name}}<i class="material-icons right">close</i></span>
-      <p>{{produto.description}}</p>
-    </div>
-  </div>
-</div>
-        </div>
-    {% empty %}
-    <div class="container">
-        <div class="row">
-                <div class="box">
-                    <div class="notProduts ">
-                        <h1>Não existem produtos cadastrados</h1>
-                     </div>
+    <div class="showProdutos" style="display: flex; flex-wrap: wrap">
+        {% for produto in produtos %}
+            <div class="flex-item" style="max-width: 18rem;height: 323px;margin: 10px" >
+                <div class="card card text-white bg-primary"    >
+                    <img class="card-img-top" src="{{ produto.image.url }}" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">{{ produto.nome }}</h5>
+                                <p class="card-text">{{ produto.description   }}</p>
+                                <a href="#" class="btn btn-success">Ver mais</a>
+                              </div>
                 </div>
-        </div>
-
-
+            </div>
+            {% empty %}
+                <div class="row">
+                        <div class="box">
+                            <div class="notProduts ">
+                                <h1>Não existem produtos cadastrados</h1>
+                             </div>
+                        </div>
+                </div>
+        {% endfor %}
     </div>
-
-{% endfor %}
-
 </div>
 
 {%endblock%}
