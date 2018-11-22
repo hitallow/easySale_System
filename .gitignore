@@ -4,7 +4,7 @@ __pycache__/
 
 # C extensions
 *.so
-apps/media/*
+
 # Distribution / packaging
 .Python
 env/
@@ -55,3 +55,5 @@ docs/_build/
 
 # PyBuilder
 target/
+# Informações vindo do bd
+apps/media/*
