@@ -16,14 +16,20 @@
         </div>
         <div class="col-sm-12 col-md-5">
           <div>
-            {{ produto }}
+            <h4>
+            {{ produto.name}}
+            </h4>
           </div>
           <div>
             {{ produto.description }}
           </div>
           <div>
             <h4>PREÇO: {{ produto.preco }}</h4>
+            <h5>Dividido em até:{{ produto.maxParc }} </h5>
           </div>
+           <div>
+             <h3>Nome do vendedor: {{ produto.cpfUserPost }}</h3>
+           </div>
         </div>
      </div>
 
