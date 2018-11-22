@@ -4,5 +4,6 @@ from .models import Product
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['id','name','preco','datePost','cpfUserPost' , 'tipyDept']
     search_fields = ['id', 'name' , 'tipyDept']
+    prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(Product , ProductAdmin)

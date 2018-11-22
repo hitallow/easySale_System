@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{%block definitionsMeta%}
+  <title>Detalhes do produto</title>
+{% endblock%}
+{%block contentPage%}
+  <div  class='container content-pag' style="border:1px solid black">
+     <div class="row">
+        <div class="col-sm-12 col-md-7">
+          <div>
+            {% if produto.image %}
+              <img src="{{ produto.image.url }}" />
+            {% else %}
+              <img src="https://www.google.com.br/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiIw43q-efeAhVFEZAKHf82D6QQjRx6BAgBEAU&url=https%3A%2F%2Ftiagotessmann.com.br%2Flancamentos-de-produto%2F&psig=AOvVaw0Zvj7NcTm5bzRhQJVMmOfQ&ust=1542974431520594"/>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-5">
+          <div>
+            {{ produto }}
+          </div>
+          <div>
+            {{ produto.description }}
+          </div>
+          <div>
+            <h4>PREÇO: {{ produto.preco }}</h4>
+          </div>
+        </div>
+     </div>
+
+  </div>
+
+{% endblock %}

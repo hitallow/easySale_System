@@ -6,11 +6,6 @@
 {% endblock%}
 
 
-
-# Tô começando essa página,
-# por enquanto, não mecha
-# na moral kkkk
-
 {%block contentPage%}
 
 <div class="container content-pag">
@@ -40,9 +35,9 @@
                         <div class="card card text-white bg-primary"    >
                             <img class="card-img-top" src="{{ produto.image.url }}" alt="Card image cap">
                                       <div class="card-body">
-                                        <h5 class="card-title">{{ produto.nome }}</h5>
+                                        <h5 class="card-title">{{ produto }}</h5>
                                         <p class="card-text">{{ produto.description   }}</p>
-                                        <a href="#" class="btn btn-success">Ver mais</a>
+                                        <a href="{{ produto.get_absolute_url }}" class="btn btn-success">Ver mais</a>
                                       </div>
                         </div>
                     </div>
