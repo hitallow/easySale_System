@@ -12,29 +12,52 @@
 # na moral kkkk
 
 {%block contentPage%}
-<div class="container">
-    <div class="showProdutos" style="display: flex; flex-wrap: wrap">
-        {% for produto in produtos %}
-            <div class="flex-item" style="max-width: 18rem;height: 323px;margin: 10px" >
-                <div class="card card text-white bg-primary"    >
-                    <img class="card-img-top" src="{{ produto.image.url }}" alt="Card image cap">
-                              <div class="card-body">
-                                <h5 class="card-title">{{ produto.nome }}</h5>
-                                <p class="card-text">{{ produto.description   }}</p>
-                                <a href="#" class="btn btn-success">Ver mais</a>
-                              </div>
-                </div>
+
+<div class="container content-pag">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                  </li>
+                </ul>
             </div>
-            {% empty %}
-                <div class="row">
+        </div>
+        <div class="col-md-9">
+            <div class="showProdutos " style="display: flex; flex-wrap: wrap">
+                {% for produto in produtos %}
+                    <div class="flex-item" style="max-width: 18rem;height: 323px;margin: 10px" >
+                        <div class="card card text-white bg-primary"    >
+                            <img class="card-img-top" src="{{ produto.image.url }}" alt="Card image cap">
+                                      <div class="card-body">
+                                        <h5 class="card-title">{{ produto.nome }}</h5>
+                                        <p class="card-text">{{ produto.description   }}</p>
+                                        <a href="#" class="btn btn-success">Ver mais</a>
+                                      </div>
+                        </div>
+                    </div>
+                    {% empty %}
                         <div class="box">
                             <div class="notProduts ">
                                 <h1>Não existem produtos cadastrados</h1>
-                             </div>
+                            </div>
                         </div>
-                </div>
-        {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
+
+
 </div>
 
 {%endblock%}

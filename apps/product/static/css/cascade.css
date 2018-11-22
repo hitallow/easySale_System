@@ -45,26 +45,31 @@ body , html{
     height:200px;
     width:200px;
 }
-.notProduts {
-    padding: 20px;
-    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.4);
-}
 .box{
     z-index: 1;
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
+.notProduts {
+    padding: 20px;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.4);
+}
+
 .showProdutos{
     display: flex;
-    border:10px solid black;
+
 }
 .flex-item{
-    border: 10px solid red;
+
     padding: 10px;
+    max-width:323px; !important
 }
+.content-pag{
+    margin-top:15px;
+    }
 /* Footer sem colado*/
 .footer{
 width: 101%;
