@@ -55,6 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
 # Informações vindo do bd
 apps/media/*
+
+# Pastas compiladas
 **/pycache/
