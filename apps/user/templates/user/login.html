@@ -6,7 +6,22 @@
 {% block contentPage%}
 <div class="container">
   <div class="row">
-    <div class="col-sm-12"></div>
+    <div class="col-sm-12" style="margin-top: 50px">
+     <form method="POST">
+     <fieldset>
+     {% csrf_token %}
+      {{ form.non_field_erros }}
+      {% for field in form %}
+        {{ field.label_tag  }}
+        {{ field }}
+        {{ field.erros }}
+      {% endfor %}
+     <button type="submit">ENVIAR</button>
+      </fieldset>
+     </form>
+
+
+    </div>
 
   </div>
 
