@@ -126,3 +126,9 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR , 'apps' , 'media')
 
 MEDIA_URL = '/media/'
+# Autenticação de usuario
+LOGIN_URL = 'user:login'
+LOGIN_REDIRECT_URL = 'product:allProducts'
+LOGOUT_URL = 'user:logout'
+
+AUTH_USER_MODEL = 'user.User'
