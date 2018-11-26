@@ -13,17 +13,16 @@
       {{ form.non_field_erros }}
       {% for field in form %}
         <div>
-        {{ field.label_tag  }}
-        {{ field }}
+          {{ field.label_tag  }}
+          {{ field }}
         {% for error in field.errors %}
             <p> {{ error }} </p>
         {% endfor %}
-       </div>
+        </div>
       {% endfor %}
      <button type="submit">ENVIAR</button>
       </fieldset>
      </form>
-    <a href="{% url 'user:register' %}"> Clique aqui para registrar-se</a>
 
 
     </div>
