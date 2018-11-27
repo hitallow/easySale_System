@@ -6,7 +6,7 @@ from django.contrib.auth.models import (
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, username, password=None):
+    def create_user(self, email, username, password=None,is_Admin=False):
         if not email:
             raise TypeError('Informe um email')
 
@@ -16,6 +16,8 @@ class UserManager(BaseUserManager):
         )
 
         user.set_password(password)
+        if(is_Admin):
+            user.is_admin = True
         user.save(using=self._db)
         return user
 
@@ -25,11 +27,9 @@ class UserManager(BaseUserManager):
         user = self.create_user(
             email=email,
             password=password,
-            username=username,
+            username=username,is_Admin=True
         )
-
-        user.is_admin = True
-        user.save(using=self._db)
+        #user.save(using=self._db)
         return user
 
 
