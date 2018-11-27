@@ -119,7 +119,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# dir
+
 
 STATIC_URL = '/static/'
 
@@ -130,5 +130,5 @@ MEDIA_URL = '/media/'
 LOGIN_URL = 'user:login'
 LOGIN_REDIRECT_URL = 'product:allProducts'
 LOGOUT_URL = 'user:logout'
-
+# Modelo personalizado
 AUTH_USER_MODEL = 'user.User'

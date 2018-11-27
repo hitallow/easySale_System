@@ -25,15 +25,16 @@ class UserManager(BaseUserManager):
         user = self.create_user(
             email=email,
             password=password,
-            username=username
+            username=username,
         )
+
         user.is_admin = True
         user.save(using=self._db)
         return user
 
 
 class User(AbstractBaseUser):
-    username = models.CharField("Nome de usuario",null=False, blank=False, max_length=100, unique=True)
+    username = models.CharField("Nome de usuario",null=False, blank=False, max_length=100, unique=True,default='')
     email = models.EmailField("Email", unique=True, null=False, blank=False)
     name = models.CharField('Nome do usuario' , null=False , blank=False , max_length=100)
     cpf = models.IntegerField('CPF usuario', primary_key=True, unique=True)
@@ -46,6 +47,9 @@ class User(AbstractBaseUser):
 
     def __str__(self):
         return self.name
+
+    def is_staff(self):
+        return self.is_admin
 
     class Meta:
         verbose_name = 'Usuário'
