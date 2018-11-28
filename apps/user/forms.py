@@ -3,6 +3,8 @@ from django.contrib import admin
 from .models import User
 from django.forms import PasswordInput
 
+
+
 class formCreation(forms.ModelForm):
     class Meta:
         model = User

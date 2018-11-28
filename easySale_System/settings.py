@@ -129,6 +129,7 @@ MEDIA_URL = '/media/'
 # Autenticação de usuario
 LOGIN_URL = 'user:login'
 LOGIN_REDIRECT_URL = 'product:allProducts'
+LOGOUT_REDIRECT_URL = 'user:login'
 LOGOUT_URL = 'user:logout'
 # Modelo personalizado
 AUTH_USER_MODEL = 'user.User'

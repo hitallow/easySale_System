@@ -70,6 +70,13 @@ body , html{
 .content-pag{
     margin-top:15px;
     }
+.loginForm{
+
+    border:1px solid red;
+}
+.errorsList{
+    color:red;
+}
 /* Footer sem colado*/
 .footer{
 width: 101%;

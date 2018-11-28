@@ -29,7 +29,8 @@ class UserManager(BaseUserManager):
         user = self.create_user(
             email=email,
             password=password,
-            username=username,is_Admin=True
+            username=username,
+            is_Admin=True
         )
         #user.save(using=self._db)
         return user
@@ -44,7 +45,7 @@ class User(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now=True)
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email']
+    REQUIRED_FIELDS = ['email','cpf']
     objects = UserManager()
 
     def __str__(self):

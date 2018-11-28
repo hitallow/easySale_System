@@ -34,9 +34,26 @@
             </div>
 
             <div class="nav-item">
-              <form action="{% url 'user:login'  %}">
+              {% if user.is_authenticated %}
+                <div class="input-group">
+                  <div class="input-group-append">
+                    <button class="btn  btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Ver seus produtos</a>
+                      <a class="dropdown-item" href="#">menu2</a>
+                      <a class="dropdown-item" href="#">menu3</a>
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url 'user:logout' %}">Sair</a>
+                    </div>
+                  </div>
+                </div>
+
+              {% else %}
+                <form action="{% url 'user:login'  %}">
                  <input type="submit" class="btn btn-success" value="Fazer login" />
               </form>
+              {% endif %}
+
             </div>
 
       </div>
