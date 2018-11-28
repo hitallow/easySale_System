@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.contrib.auth.hashers import make_password
 from .forms import formCreation
 # Views da app User.
 root ='user/'
@@ -12,8 +12,9 @@ def register(request):
         print(form.errors)
         print(form.is_valid())
         if form.is_valid():
-            print("salvou")
-            form.save()
+            signup = form.save(commit=False)
+            signup.password = make_password(form.cleaned_data['password'])
+            signup.save()
             return redirect("user:login")
 
     else:

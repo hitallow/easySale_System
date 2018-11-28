@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.contrib.auth.hashers import make_password
+
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser,AbstractUser
 )
@@ -14,7 +16,7 @@ class UserManager(BaseUserManager):
             email=self.normalize_email(email),
             username=username
         )
-
+        password = make_password(password)
         user.set_password(password)
         if(is_Admin):
             user.is_admin = True
@@ -36,7 +38,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser):
     username = models.CharField("Nome de usuario",null=False, blank=False, max_length=100, unique=True,default='')
     email = models.EmailField("Email", unique=True, null=False, blank=False)
-    name = models.CharField('Nome do usuario' , null=False , blank=False , max_length=100)
+    name = models.CharField('Nome completo' , null=False , blank=False , max_length=100)
     cpf = models.IntegerField('CPF usuario', primary_key=True, unique=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
