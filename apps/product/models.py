@@ -1,11 +1,11 @@
 from django.db import models
 from apps.user.models import User
-from django.urls import reverse
+
 # Modelos da app produto.
 
 class Product(models.Model):
     name = models.CharField('Nome do Produto' , max_length=50)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     preco = models.DecimalField(verbose_name='Preço do produto' , max_digits=10 , decimal_places=2)
     datePost = models.DateField(auto_now_add=True)
     cpfUserPost = models.ForeignKey(User, on_delete=models.CASCADE)

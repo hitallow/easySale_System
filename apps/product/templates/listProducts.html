@@ -33,7 +33,11 @@
                 {% for produto in produtos %}
                     <div class="flex-item" style="max-width: 18rem;height: 323px;margin: 10px" >
                         <div class="card card text-white bg-primary"    >
-                            <img class="card-img-top" src="{{ produto.image.url }}" alt="Card image cap">
+                          {% if produto.image %}
+                          <img class="card-img-top" src="{{ produto.image.url }}" alt="Card image cap">
+                          {% else %}
+                              <img class="card-img-top" src="https://img.itdg.com.br/tdg/images/recipes/000/169/692/146782/146782_original.jpg?mode=crop&scale=both&w=320&h=200" alt="Card image cap">
+                          {% endif %}
                                       <div class="card-body">
                                         <h5 class="card-title">{{ produto }}</h5>
                                         <p class="card-text">{{ produto.description   }}</p>
