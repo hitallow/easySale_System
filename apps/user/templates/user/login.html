@@ -9,8 +9,8 @@
 {% block contentPage%}
 <div class="container">
   <div class="row">
-    <div class="center-align" style="margin-top: 50px">
-     <form method="POST" class="loginForm">
+    <div class="center-align loginForm" style="margin-top: 50px" >
+     <form method="POST">
        <div>
          {% csrf_token %}
               {{ form.non_field_erros }}

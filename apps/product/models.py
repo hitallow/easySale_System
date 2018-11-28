@@ -12,7 +12,7 @@ class Product(models.Model):
     tipyDept = models.CharField('Departamento' , null=False , blank=False , max_length=20)
     description = models.TextField('Descrição do produto' )
     juros = models.BooleanField( null=False , blank=False)
-    image = models.ImageField(verbose_name="Imagem do Produto", upload_to='product/images' )
+    image = models.ImageField(verbose_name="Imagem do Produto", upload_to='product/images',null=True, blank=True )
     maxParc = models.IntegerField(verbose_name='Total de Parcelas')
 
     def __str__(self):

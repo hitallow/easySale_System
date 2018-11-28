@@ -40,7 +40,7 @@
                     <button class="btn  btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</button>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="#">Ver seus produtos</a>
-                      <a class="dropdown-item" href="#">menu2</a>
+                      <a class="dropdown-item" href="{% url 'product:cadastrar' %}">Cadastrar produto</a>
                       <a class="dropdown-item" href="#">menu3</a>
                       <div role="separator" class="dropdown-divider"></div>
                       <a class="dropdown-item" href="{% url 'user:logout' %}">Sair</a>

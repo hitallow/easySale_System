@@ -71,10 +71,10 @@ body , html{
     margin-top:15px;
     }
 .loginForm{
-
+    color:red;
     border:1px solid red;
 }
-.errorsList{
+.errosList{
     color:red;
 }
 /* Footer sem colado*/

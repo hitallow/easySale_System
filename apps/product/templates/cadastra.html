@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block contentPage %}
+<div>
+<h1>inserindo</h1>
+  <form method="POST">
+
+  <div>{% csrf_token %}
+    {% for field in form %}
+
+      <div>
+        {{ field.label_tag }}
+        {{ field }}
+      </div>
+    {% endfor %}
+  </div>
+  <button type="submit">salvar</button>
+  </form>
+
+
+</div>
+{% endblock %}

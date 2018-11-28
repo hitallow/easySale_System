@@ -21,7 +21,7 @@ def register(request):
             signup = form.save(commit=False)
             signup.password = make_password(form.cleaned_data['password'])
             signup.save()
-            return redirect("user:login")
+            return redirect(settings.LOGIN_URL)
     else:
         form = formCreation()
 

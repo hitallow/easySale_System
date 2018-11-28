@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block definitionsMeta %}
-  <title>Faça login</title>
+  <title>Cadastre-se</title>
 {% endblock %}
 
 {% block contentPage%}
@@ -16,17 +17,14 @@
           {{ field.label_tag  }}
           {{ field }}
         {% for error in field.errors %}
-            <p> {{ error }} </p>
+            <p style="color: red;"> {{ error }} </p>
         {% endfor %}
         </div>
       {% endfor %}
-     <button type="submit">ENVIAR</button>
+     <button type="submit" class="btn-danger btn">Cadastrar-se</button>
       </fieldset>
      </form>
-
-
     </div>
-
   </div>
 
 </div>
