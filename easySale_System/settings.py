@@ -119,9 +119,9 @@ USE_L10N = True
 USE_TZ = True
 
 
+SESSION_COOKIE_SECURE = False
+
 # Static files (CSS, JavaScript, Images)
-
-
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR , 'apps' , 'media')
