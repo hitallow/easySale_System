@@ -16,7 +16,7 @@ class UserManager(BaseUserManager):
             email=self.normalize_email(email),
             username=username
         )
-        password = make_password(password)
+        #password = make_password(password)
         user.set_password(password)
         user.date_joined = datetime.now()
         user.is_active = True
@@ -26,6 +26,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, username, password):
+        print(password)
         if password is None:
             raise TypeError('Você precisa de uma senha')
         user = self.create_user(
@@ -35,7 +36,7 @@ class UserManager(BaseUserManager):
             is_Admin=True
         )
         user.is_admin = True
-        
+        print(user.password)
         user.save(using=self._db)
         return user
 
