@@ -1,14 +1,15 @@
 from django import forms
 from django.contrib import admin
 from .models import User
-from django.forms import PasswordInput,TextInput
+from django.forms import (
+    PasswordInput,TextInput, EmailInput)
 import re
 
 
 
 class formCreation(forms.ModelForm):
-    password = forms.CharField(label="Senha do lado", widget=forms.PasswordInput(attrs={'placeholder':'Sua senha'}))
-    password1 = forms.CharField(label="Confimação de senha", widget=PasswordInput(attrs={'placeholder':'Confime sua senha'}))
+    password = forms.CharField(label="Senha do lado", widget=forms.PasswordInput(attrs={'placeholder':'Sua senha', 'class':'form-control'}))
+    password1 = forms.CharField(label="Confimação de senha", widget=PasswordInput(attrs={'placeholder':'Confime sua senha', 'class':'form-control'}))
 
     def clean_password1(self):
         password1 = self.cleaned_data.get('password')
@@ -36,6 +37,8 @@ class formCreation(forms.ModelForm):
         fields = '__all__'
         exclude = ['is_active', 'is_admin','last_login']
         widgets = {
-            'username': TextInput( attrs={'placeholder': 'username'}),
-            'name':TextInput(attrs={'placeholder':'Seu nome','class':'form-control'})
+            'username': TextInput( attrs={'placeholder': 'Username','class':'form-control'}),
+            'name':TextInput(attrs={'placeholder':'Seu nome','class':'form-control'}),
+            'email':EmailInput(attrs={'class':'form-control','placeholder':'seunome@dominio.com'}),
+            'cpf':TextInput(attrs={'class':'form-control'})
         }

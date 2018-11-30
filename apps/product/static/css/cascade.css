@@ -77,6 +77,9 @@ body , html{
 .errosList{
     color:red;
 }
+.title-cadastro h2{
+    color:blue;
+}
 /* Footer sem colado*/
 .footer{
 width: 101%;
