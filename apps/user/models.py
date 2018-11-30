@@ -1,12 +1,11 @@
 from django.db import models
-
 from django.contrib.auth.hashers import make_password
 from datetime import datetime
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser,AbstractUser
 )
-
-
+from django.core import validators 
+import re
 class UserManager(BaseUserManager):
     def create_user(self, email, username, password=None,is_Admin=False):
         if not email:
@@ -42,10 +41,14 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    username = models.CharField("Nome de usuario",null=False, blank=False, max_length=100, unique=True,default='')
+    username = models.CharField(
+        "Nome de usuario",null=False, blank=False, max_length=100, unique=True,default='',
+        validators=[validators.RegexValidator(re.compile('^[\w.@+-]+$'),
+         'Nome de usuario só pode conter letras, números ou estes caracteres: @/./+/_'
+         , 'invalid')])
     email = models.EmailField("Email", unique=True, null=False, blank=False)
     name = models.CharField('Nome completo' , null=False , blank=False , max_length=100)
-    cpf = models.IntegerField('CPF usuario', primary_key=True, unique=True)
+    cpf = models.CharField('CPF usuario', primary_key=True, unique=True, max_length=15)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now=True)

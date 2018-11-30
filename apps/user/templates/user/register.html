@@ -5,27 +5,15 @@
 {% endblock %}
 
 {% block contentPage%}
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12" style="margin-top: 50px">
-     <form method="POST">
-     <fieldset>
-     {% csrf_token %}
-      {{ form.non_field_erros }}
-      {% for field in form %}
-        <div>
-          {{ field.label_tag  }}
-          {{ field }}
-        {% for error in field.errors %}
-            <p style="color: red;"> {{ error }} </p>
-        {% endfor %}
-        </div>
-      {% endfor %}
-     <button type="submit" class="btn-danger btn">Cadastrar-se</button>
-      </fieldset>
-     </form>
-    </div>
-  </div>
-
+<div class="contentPage"> 
+  <div class="container">
+    <form method="POST" class="form-row">
+      <div class="form-group col-md-4">
+        <label for="form.name.id_tag"> Digite seu nome </label>
+        {{form.name}}
+      </div>
+      
+    </form>
+  <div>
 </div>
 {% endblock %}

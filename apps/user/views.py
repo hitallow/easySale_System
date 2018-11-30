@@ -18,9 +18,7 @@ def register(request):
     if request.method == "POST":
         form = formCreation(request.POST)
         if form.is_valid():
-            signup = form.save(commit=False)
-            signup.password = make_password(form.cleaned_data['password'])
-            signup.save()
+            form.save()
             return redirect(settings.LOGIN_URL)
     else:
         form = formCreation()
