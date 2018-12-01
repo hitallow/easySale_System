@@ -18,6 +18,8 @@ class formCreation(forms.ModelForm):
         print(password2)
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError("As senhas não batem")
+        if len(password2)<8:
+            raise forms.ValidationError("Sua senha é muito pequena, é indicado uma senha com mais de 8 caracteres")
         return password2
 
     def clean_cpf(self):
@@ -42,3 +44,8 @@ class formCreation(forms.ModelForm):
             'email':EmailInput(attrs={'class':'form-control','placeholder':'seunome@dominio.com'}),
             'cpf':TextInput(attrs={'class':'form-control'})
         }
+
+class formLogin(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username','password']

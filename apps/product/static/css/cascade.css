@@ -74,8 +74,12 @@ body , html{
     color:red;
     border:1px solid red;
 }
-.errosList{
+.erros-list{
+    margin-top: 2px;
+}
+.erros-list p{
     color:red;
+    font-size: 12px;
 }
 .title-cadastro h2{
     color:blue;

@@ -12,18 +12,18 @@
     <div class="title-cadastro">
       <h2>Cadastro de usuários</h2>
     </div>
-    <form method="POST" >
+    <form method="POST" class='d-flex flex-column '>
       {% csrf_token %} 
       <div class="row">
         <div class="form-group col-md-4 mb-3">
           <label for="form.name.id_tag"> Digite seu nome</label>
           {{form.name}}
         </div>
-        <div class="invalid-feedback">
+        <div class="erros-list">
             {% for erro in form.name.errors  %}
-              <p>{{erro}}</p>
+              <p class="alert alert-danger erro-alert">{{erro}}</p>
             {% endfor %}
-            </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-4 mb-3">
@@ -33,15 +33,12 @@
               <span class="input-group-text" id="inputGroupPrepend">@</span>
             </div>
             {{form.username}}
-            <div class="invalid-feedback">
-              {{form.username.errors}}
-            </div>
-            <div class="invalid-feedback">
-            {% for erro in form.username.errors  %}
-              <p>{{erro}}</p>
-            {% endfor %}
-            </div>
           </div>
+          <div class="erros-list">
+              {% for erro in form.username.errors  %}
+                <p class="alert alert-danger">{{erro}}</p>
+              {% endfor %}
+            </div>
         </div>
       </div>
       <div class="row">
@@ -49,9 +46,9 @@
           <label for="{{form.email.id_tag}}">Endereço de e-mail</label>
           {{form.email}}
           <small id="emailHelp" class="form-text text-muted">Nós não compartilharemos seu endereço, fique tranquilo.</small>
-          <div class="invalid-feedback">
+          <div class="erros-list">
             {% for erro in form.email.errors%}
-              <p>{{erro}}</p>
+              <p class="alert alert-danger">{{erro}}</p>
             {% endfor %}
           </div>
         </div>
@@ -61,9 +58,9 @@
           <label for="{{form.cpf.id_tag}}">Seu cpf</label>
           {{form.cpf}}
           <small id="emailHelp" class="form-text text-muted">Verifque nossas politicas, por segurança..</small>
-          <div class="invalid-feedback">
+          <div class="erros-list">
               {% for erro in form.cpf.errors%}
-                <p>{{erro}}</p>
+                <p class="alert alert-danger">{{erro}}</p>
               {% endfor %}
           </div>
         </div>
@@ -73,9 +70,9 @@
           <label for="{{form.password.id_tag}}">Sua senha</label>
           {{form.password}}
           <small id="emailHelp" class="form-text text-muted">As senhas diferem de maiusculas e minusculas.</small>
-            <div class="invalid-feedback">
+            <div class="erros-list">
                 {% for erro in form.password.errors%}
-                  <p>{{erro}}</p>
+                  <p class="alert alert-danger">{{erro}}</p>
                 {% endfor %}
             </div>
         </div>
@@ -84,9 +81,9 @@
         <div class="col-md-4 mb-3">
           <label for="{{form.password1.id_tag}}">Confimação de senha</label>
           {{form.password1}}
-          <div class="invalid-feedback">
+          <div class="erros-list">
               {% for erro in form.password1.errors%}
-                <p>{{erro}}</p>
+                <p class="alert alert-danger">{{erro}}</p>
               {% endfor %}
           </div>
         </div>
