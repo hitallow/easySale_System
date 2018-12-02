@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    {%block definitionsMeta%}
+
+    {% endblock%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/cascade.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary " style="z-index: 999;">
+<div class="container">
+
+  <a class="navbar-brand" href="{% url 'product:index'  %} ">SuaCompra.com</a>
+  <button class="navbar-toggler f" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon  "></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'product:allProducts'  %} ">Produtos <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Ofertas</a>
+      <a class="nav-item nav-link" href="#">Departamentos</a>
+    </div>
+      <div class="navbar-nav ml-auto">
+          <div class="nav-item">
+                <form>
+                    <input type="search" class='form-control' placeholder="pesquise aqui..">
+                </form>
+            </div>
+
+            <div class="nav-item">
+              {% if user.is_authenticated %}
+                <div class="input-group">
+                  <div class="input-group-append">
+                    <button class="btn  btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Ver seus produtos</a>
+                      <a class="dropdown-item" href="{% url 'product:cadastrar' %}">Cadastrar produto</a>
+                      <a class="dropdown-item" href="#">menu3</a>
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url 'user:logout' %}">Sair</a>
+                    </div>
+                  </div>
+                </div>
+
+              {% else %}
+                <form action="{% url 'user:login'  %}">
+                 <input type="submit" class="btn btn-success" value="Fazer login" />
+              </form>
+              {% endif %}
+
+            </div>
+
+      </div>
+  </div>
+</div>
+</nav>
+
+
+{%block contentPage%}
+
+
+{%endblock%}
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>

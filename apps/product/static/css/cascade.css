@@ -60,6 +60,7 @@ body , html{
 
 .showProdutos{
     display: flex;
+    
 
 }
 .flex-item{
@@ -87,6 +88,7 @@ body , html{
 /* Footer sem colado*/
 .footer{
 width: 101%;
+
 margin: -0% -1%;
 margin-bottom: -1%;
 }

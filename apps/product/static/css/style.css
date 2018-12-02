@@ -1,0 +1,226 @@
+*{
+	box-sizing: border-box;
+}
+.wraper{
+
+	margin: 0px;
+	
+
+}
+.trasparent, .trasparent:hover{
+	color: transparent;
+}
+
+.header1{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: 10px 10px -0px 0px;
+	margin: 0px;
+	background-color: rgba(0, 0, 0, .1)
+	}
+
+.midias-sociais{
+	display: flex;
+	list-style-type: none;
+
+}
+.midias-sociais li{
+
+	margin: 2px;
+}
+.header1 .contact{
+	text-decoration: none;
+	color:  blue;
+}
+
+
+.facebook-svg{
+	display: block;
+  	width: 25px;
+  	height: 25px;
+  	background-size: 100%;
+	background-image: url('../svg/facebook-circular-logo.svg') ;	
+
+}
+.facebook-svg hover{
+	fill: yellow !important;
+	stroke: red !important;
+	cursor: pointer;
+}
+
+.instagram-svg{
+	display: block;
+  	width: 25px;
+  	height: 25px;
+  	background-size: 100%;
+	background-image: url('../svg/instagram-logo.svg') ;	
+
+}
+.instagram-svg hover{
+	fill: yellow !important;
+	stroke: red !important;
+	cursor: pointer;
+}
+
+.git-svg{
+	display: block;
+  	width: 25px;
+  	height: 25px;
+  	background-size: 100%;
+	background-image: url('../svg/github-logo.svg') ;	
+
+}
+.git-svg hover{
+	fill: yellow !important;
+	stroke: red !important;
+	cursor: pointer;
+}
+
+.header1 p{
+	font-family: 'Amatic SC', cursive;
+}
+.nav-menu{
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+.nav-menu h3.brand{
+	font-family: 'Kaushan Script', cursive;
+	font-size: 30px;
+	color: blue;
+	text-decoration: none: 
+}
+.nav-menu h3.brand a:hover{
+	text-decoration: none;
+	color: red;
+	transition: .2s
+}
+.menu-itens{
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	font-family:'Amatic SC', cursive;
+	font-size: 20px;
+	font-variant: small-caps;
+}
+.menu-itens a,.menu-itens a:hover {
+	text-decoration: none;
+}
+.menu-itens li{
+	padding: 0px 30px;
+}
+.menu-itens li:hover{
+	border-bottom: 1.2px solid black;
+	transition-delay: .1s;
+	transition: .2s;
+	cursor: pointer;
+  	position: relative;
+	
+}
+.menu-items li>a:hover{
+	cursor: pointer;
+}
+.menu-options{
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+}
+.menu-options li{
+	margin: 0px 15px;
+}
+
+.menu-options .bag{
+	display: block;
+  	width: 25px;
+  	height: 25px;
+	background: url('../svg/shopping-bag.svg');
+	background-size: 100%;
+}
+.accounts{
+	display: block;
+  	width: 25px;
+  	height: 25px;
+	background: url('../svg/round-account-button-with-user-inside.svg');
+	background-size: 100%;
+	border: none;
+}
+
+.menu-options .divider{
+	border: 1px solid black;
+	display: block;
+	background-color: black;
+	width: 2px;
+	height: 25px;
+}
+.username{
+	font-size: 14px;
+}
+
+.menu-itens > li:hover > .sub_menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sub_menu {
+  list-style-type: none;
+  position: absolute;
+  z-index: 1100;
+  top:0;
+  left:100%;
+  width: 200px;
+  background-color: #222222;
+  opacity: 0;
+  visibility: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+.menu-itens > li > .sub_menu {
+  top:100%;
+  left: 0;
+  position: absolute;
+}
+
+.sub_menu li:hover > .sub_menu {
+  visibility: visible;
+  opacity: 1;
+} 
+
+.sub_menu li { 
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+
+.sub_menu li, .sub_menu a {
+  padding: 10px;
+  font-family: Montserrat-Regular;
+  font-size: 13px;
+  color: white;
+}
+
+.sub_menu > li:hover > a {
+  color: #e65540;
+  text-decoration: none;
+}
+.footer-contet{
+	background-color: rgba(0, 0, 0, .3);
+	padding: 10px;
+	padding-top: 60px;
+}
+.content-information{
+	
+}
+.content-information p{
+	margin: 10px;
+	font-size: 12px;
+
+}

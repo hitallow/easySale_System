@@ -1,78 +1,136 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    {%block definitionsMeta%}
 
-    {% endblock%}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/cascade.css' %}">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+</!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title></title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Kaushan+Script" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary " style="z-index: 999;">
-<div class="container">
+	<div class="wraper" >
+		<div class="header1">
+			<div class="header1-item">
+				<ul class="midias-sociais">
+					<li class="facebook-svg "><a class="trasparent" href="#face" >facebook</a></li>
+					<li class="instagram-svg "><a  class="trasparent" href="#insta">instagram</a></li>
+					<li class="git-svg "><a class="trasparent" href="#git"></a></li>
+				</ul>
+			</div>
+			<div>
+				<p>
+					Compre conosco, que cuidaremos de tudo!
+				</p>
+			</div>
+			<div>
+				<p>
+					<a class="contact" href="mailto:webmaster@example.com">supportsuacompra@gmail.com</a>
+				</p>
+			</div>
+		</div>
 
-  <a class="navbar-brand" href="{% url 'product:index'  %} ">SuaCompra.com</a>
-  <button class="navbar-toggler f" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon  "></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="{% url 'product:allProducts'  %} ">Produtos <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Ofertas</a>
-      <a class="nav-item nav-link" href="#">Departamentos</a>
-    </div>
-      <div class="navbar-nav ml-auto">
-          <div class="nav-item">
-                <form>
-                    <input type="search" class='form-control' placeholder="pesquise aqui..">
-                </form>
-            </div>
-
-            <div class="nav-item">
-              {% if user.is_authenticated %}
-                <div class="input-group">
-                  <div class="input-group-append">
-                    <button class="btn  btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Ver seus produtos</a>
-                      <a class="dropdown-item" href="{% url 'product:cadastrar' %}">Cadastrar produto</a>
-                      <a class="dropdown-item" href="#">menu3</a>
-                      <div role="separator" class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="{% url 'user:logout' %}">Sair</a>
-                    </div>
-                  </div>
-                </div>
-
-              {% else %}
-                <form action="{% url 'user:login'  %}">
-                 <input type="submit" class="btn btn-success" value="Fazer login" />
-              </form>
-              {% endif %}
-
-            </div>
-
-      </div>
-  </div>
-</div>
-</nav>
+		<div class="nav-menu">
+			<div><h3 class="brand"> <a href="{%url 'product:index'%}">SuaCompra.</a></h3></div>
+			<div>
+				<ul class="menu-itens">
+					<li class="drop-menu"><a>Home</a></li>
+					<li>
+						<a href="index.html">Departamentos</a>
+						<ul class="sub_menu">
+							<li><a href="index.html">Computadores</a></li>
+							<li><a href="home-02.html">informatica</a></li>
+							<li><a href="home-03.html">microprocesador</a></li>
+						</ul>
+					</li>
+					<li><a>Ofertas</a></li>
+					<li><a>Contato</a></li>
+				</ul>
+			</div>
+			<div>
+				<div>
+					<ul class="menu-options">
+						{% if user.is_authenticated %}
+							<li>
+								<div class="btn-group">
+									  <button type="button" class="dropdown-toggle accounts trasparent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									  </button>
+									  <div class="dropdown-menu">
+									    <a class="dropdown-item" href="#">Perfil</a>
+									    <a class="dropdown-item" href="#">Ver meus produtos</a>
+									    <a class="dropdown-item" href="#">Registrar-se</a>
+									    <div class="dropdown-divider"></div>
+									    
+									  </div>
+								</div>
+							</li>
+						{%else%}
+							<li>
+								<div class="btn-group">
+									  <button type="button" class="dropdown-toggle accounts trasparent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									  </button>
+									  <div class="dropdown-menu">
+									    <a class="dropdown-item" href="{% url 'user:login'%}">Entrar</a>
+									    <a class="dropdown-item" href="{% url 'user:register' %}">Registrar-se</a>  
+									  </div>
+								</div>
+							</li>
+						{%endif%}
+						<li class="divider trasparent"></li>
+						<li class="bag trasparent"><a>Carrinho</a></li>
+					</ul>
+				</div>
+		</div>
+		</div>
+	</div>	
 
 
 {%block contentPage%}
 
 
 {%endblock%}
+<footer class="footer-contet">
+		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="content-information">
+					<h5>Entre em contato</h5>
+					<div class="">
+						<p>
+						Alguma pergunta? Deixe-nos saber na loja no 8º andar, 379 Hudson St, Nova York, NY 10018 ou ligue para (+1) 96 716 6879
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<h5>Categorias</h5>
+			</div>
+			<div class="col-md-2">
+				<h5>Links úteis</h5>
+			</div>
+			<div class="col-md-2">
+				alguma informação
+				
+			</div>
+			<div class="col-md-3">
+				<h4>Notificações de promoções</h4>
+				<div>se inscreva	</div>
+			</div>
 
-
-
+		</div>
+	</div>
+</footer>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script src="{% static 'js/scripts.js' %}"></script>
 
 </body>
