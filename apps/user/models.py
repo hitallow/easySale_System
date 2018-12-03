@@ -73,3 +73,6 @@ class User(AbstractBaseUser):
         ordering = ['username']
 
 
+class ProdutosComprados(models.Model):
+    nome = models.TextFiel('nome do produto')
+    data_compra = models.DateTimeField('Data de compra')
