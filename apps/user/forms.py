@@ -14,8 +14,6 @@ class formCreation(forms.ModelForm):
     def clean_password1(self):
         password1 = self.cleaned_data.get('password')
         password2 = self.cleaned_data.get('password1')
-        print(password1)
-        print(password2)
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError("As senhas não batem")
         if len(password2)<8:
@@ -23,7 +21,9 @@ class formCreation(forms.ModelForm):
         return password2
 
     def clean_cpf(self):
+
         cpf = str(self.cleaned_data.get('cpf'))
+        print(cpf)
         if(not (re.match('^((\d{3}).(\d{3}).(\d{3})-(\d{2}))*$', cpf) or re.match('^\d{11}$', cpf))):
             raise forms.ValidationError("CPF invalido")
         return cpf
