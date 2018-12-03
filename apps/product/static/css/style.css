@@ -85,6 +85,8 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
+	position: static;
+	width: 100%;
 }
 .nav-menu h3.brand{
 	font-family: 'Kaushan Script', cursive;
@@ -212,15 +214,44 @@
   text-decoration: none;
 }
 .footer-contet{
-	background-color: rgba(0, 0, 0, .3);
+	background-color: #ecf0f1;
 	padding: 10px;
 	padding-top: 60px;
+	color:#57606f;
 }
-.content-information{
+
+.footer-contet h5{
+	text-transform: uppercase;
+	color :black;
+	font-family: 'Lobster', cursive;
+}
+.footer-contet ul{
+	list-style-type: none;
+}
+.footer-contet .list-details{
+
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 20px;
+
+}
+.footer-contet .list-details li{
+	margin:5px;
+}
+.footer-contet p{
+	font-size: 14px;
 	
 }
-.content-information p{
-	margin: 10px;
-	font-size: 12px;
+.content-information{
+	font-family:  'Shadows Into Light', cursive;
+	font-size: 18px;
+}
+#entre-em-contato p{
+	font-family: 'Shadows Into Light', cursive;
+	font-size:18px;
+	margin-top: 5px;
+	color:black !important;
 
+}
+.carousel-item{ 
+	height: 800px !important;
 }

@@ -9,7 +9,9 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Kaushan+Script" rel="stylesheet">
+
+  <!--fontes-->
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Kaushan+Script|Lobster|Montserrat|Shadows+Into+Light" rel="stylesheet">
 </head>
 <body>
 	<div class="wraper" >
@@ -34,13 +36,13 @@
 		</div>
 
 
-		<div class="nav-menu">
+		<nav class="nav-menu" id="nav_bar">
 			<div><h3 class="brand"> <a href="{%url 'product:index'%}">SuaCompra.</a></h3></div>
 			<div>
 				<ul class="menu-itens">
 					<li class="drop-menu"><a>Home</a></li>
 					<li>
-						<a href="index.html">Departamentos</a>
+						<a href="drop-menu">Departamentos</a>
 						<ul class="sub_menu">
 							<li><a href="index.html">Computadores</a></li>
 							<li><a href="home-02.html">informatica</a></li>
@@ -86,7 +88,7 @@
 				</div>
 		</div>
 		</div>
-	</div>	
+	</nav>	
 
 
 {%block contentPage%}
@@ -94,33 +96,63 @@
 
 {%endblock%}
 <footer class="footer-contet">
-		
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<div class="content-information">
+				<div class="content-information" id="entre-em-contato">
 					<h5>Entre em contato</h5>
 					<div class="">
 						<p>
-						Alguma pergunta? Deixe-nos saber na loja no 8º andar, 379 Hudson St, Nova York, NY 10018 ou ligue para (+1) 96 716 6879
+						  Alguma pergunta? Deixe-nos saber na loja no 8º andar, 379 Hudson St, Nova York, NY 10018 ou ligue para (+1) 96 716 6879
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-2">
-				<h5>Categorias</h5>
-			</div>
-			<div class="col-md-2">
-				<h5>Links úteis</h5>
-			</div>
-			<div class="col-md-2">
-				alguma informação
+        <div>
+          <h5>Categorias</h5>  
+            <ul class="list-details">
+              <li><a>Para homens</a></li>
+              <li><a>Para mulheres</a></li>
+              <li><a>Para crianças</a></li>
+              <li><a>Todos</a></li>
+            </ul>
+        </div>
 				
 			</div>
-			<div class="col-md-3">
-				<h4>Notificações de promoções</h4>
-				<div>se inscreva	</div>
+			<div class="col-md-2">
+        <div>
+  				<h5>Links úteis</h5>
+          <ul class="list-details">
+              <li><a>Pesquise</a></li>
+              <li><a>contate-nos</a></li>
+              <li><a>Sobre nós</a></li>
+              <li><a>Feedback</a></li>
+          </ul>
+        </div>
 			</div>
+			<div class="col-md-2">
+        <div>
+				  <h5>Ajuda</h5>
+          <ul class="list-details">
+            <li><a>Segurança</a></li>
+            <li><a>Sobre nós</a></li>
+            <li><a>Nossas avaliações</a></li>
+            <li><a>FAQs</a></li>
+          </ul>
+			  </div>
+      </div>
+			<div class="col-md-3">
+        <div class="content-information">
+  				<h5>Notificações de promoções</h5>
+  				<div>
+            <label for="inscricao">se inscreva </label>
+              <input type="email" name="inscricao" placeholder="seuemail@dominio.com" id="inscricao" class="form-control">
+              <p>Nós enviaremos apenas promoções para você</p>
+          </div>
+  			</div>
+      </div>
 
 		</div>
 	</div>
