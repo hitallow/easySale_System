@@ -7,14 +7,14 @@ class Product(models.Model):
     name = models.CharField('Nome do Produto' , max_length=50)
     slug = models.SlugField(unique=True)
     preco = models.DecimalField(verbose_name='Preço do produto' , max_digits=10 , decimal_places=2)
-    datePost = models.DateField(auto_now_add=True)
-    cpfUserPost = models.ForeignKey(User, on_delete=models.CASCADE)
+    datePost = models.DateField(auto_now_add=True)  
     tipyDept = models.CharField('Departamento' , null=False , blank=False , max_length=20)
     description = models.TextField('Descrição do produto' )
     juros = models.BooleanField( null=False , blank=False)
     image = models.ImageField(verbose_name="Imagem do Produto", upload_to='product/images',null=True, blank=True )
     maxParc = models.IntegerField(verbose_name='Total de Parcelas')
 
+    cpfUserPost = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
 
@@ -25,3 +25,18 @@ class Product(models.Model):
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'
         ordering = ['id']
+
+
+
+class Coment(models.Model):
+    comentario = models.TextField('Comentário do produto',max_length=200 )
+    nota = models.DecimalField('Nota', max_digits=10,decimal_places=1)
+    title = models.TextField("Titulo do comentario",max_length=50)
+    produto = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = 'Comentário'
+        verbose_name_plural = 'Comentários'
+        ordering = ['nota']
