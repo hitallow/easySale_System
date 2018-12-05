@@ -74,5 +74,5 @@ class User(AbstractBaseUser):
 
 
 class ProdutosComprados(models.Model):
-    nome = models.TextFiel('nome do produto')
+    nome = models.TextField('nome do produto')
     data_compra = models.DateTimeField('Data de compra')
