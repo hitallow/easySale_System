@@ -3,40 +3,86 @@
 
 {% block definitionsMeta %}
   <title>Faça login</title>
-  <link rel="stylesheet" href="{% static 'css/cascade.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 {% endblock %}
 
 {% block contentPage%}
-<div class="container">
-  <div class="row">
-    <div class="center-align loginForm" style="margin-top: 50px" >
-     <form method="POST">
-       <div>
-         {% csrf_token %}
-              {{ form.non_field_erros }}
-            <div>
-                {{ form.username.label_tag }}
-                 {{ form.username}}
-                    {% for error in form.username.errors %}
-                      <p class="errosList"> {{ error }} </p>
-                    {% endfor %}
-            </div>
-            <div>
-              
-              {{ form.password }}
-              {% for error in form.password.errors %}
-                <p class="errosList"> {{ error }} </p>
-              {% endfor %}
-            </div>
-        </div>
-     <button type="submit" class="btn-success btn">Entrar</button>
-     </form>
-    <a href="{% url 'user:register' %}" class="btn btn-primary"> Clique aqui para registrar-se</a>
 
+<section class="login-block">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 login-sec">
+              <h2 class="text-center">Faça login</h2>
+              <form class="login-form" method="POST">
+                {% csrf_token %}
+                {{ form.non_field_erros }}
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+                <input class="form-control" type="text" id="{{ form.username.id_for_label}}" name="{{form.username.html_name}}" maxlength="30" >
+                
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+                <input class="form-control" type="password" id="{{ form.password.id_for_label}}" name="{{form.password.html_name}}" maxlength="30" >
+              </div>
+              
+              
+                <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input">
+                  <small>Lembrar</small>
+
+                </label>
+                <button type="submit" class="btn btn-login float-right">Submit</button>
+                <a href="{% url 'user:register' %}" class="btn btn-primary"> Clique aqui para registrar-se</a>
+              </div>
+  
+          </form>
 
     </div>
-
+    <div class="col-md-8 banner-sec">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                 <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+            <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>Coloque seus produtos a venda</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>  
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt="Secound slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>Alcançe milhares de usuários</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>  
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="https://images.pexels.com/photos/872957/pexels-photo-872957.jpeg" alt="Three slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>Alavance seu orçamento</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        </div>  
+    </div>
   </div>
-
+  </div>     
+        
+    </div>
+  </div>
 </div>
+</section>
+
+
 {% endblock %}
+https://bootsnipp.com/tags/login/4

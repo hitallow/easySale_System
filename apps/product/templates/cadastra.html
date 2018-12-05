@@ -1,21 +1,84 @@
 {% extends 'base.html' %}
 
 {% block contentPage %}
-<div>
-<h1>inserindo</h1>
+
+<div class="container">
   <form method="POST">
+    {% csrf_token %}
+  <div class="row">
+    <div class="col-md-6">
+      <label for='form.name.id_tag'>Nome do produto</label>
+      {{form.name}}
+    </div>
 
-  <div>{% csrf_token %}
-    {% for field in form %}
-
-      <div>
-        {{ field.label_tag }}
-        {{ field }}
-      </div>
-    {% endfor %}
   </div>
-  <button type="submit">salvar</button>
-  </form>
+  <div class="row">
+    <div class="col-md-6">
+      <div>
+        <label for='form.preco.id_tag'>preco</label>
+        {{form.preco}}
+      </div>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div>
+      <label for="form.tipyDept.id_for_label">Departamento do produto</label> 
+        <div class="form-group">
+
+          {{form.tipyDept}}
+        </div>
+      
+    </div>
+    
+  </div></div>
+  <div class="row">
+    <div class="col-md-6">
+      <div>
+        <label for="form.description.id_for_label">Descrição do produto</label>
+        {{form.description}}
+      </div>
+      
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="custom-control custom-checkbox mr-sm-2">
+        <input class="custom-control-input" type="checkbox" id="{{ form.juros.id_for_label}}" name="{{form.juros.html_name}}" >
+        <label class="custom-control-label" for="{{form.juros.id_for_label}}">Juros no produto</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div>
+        <label for="form.maxParc.id_for_label">Máximo de parcelas</label>
+        {{form.maxParc}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" >
+      <div class="custom-file" >
+
+        {{form.image}}
+        <label class="custom-file-label" for="customFileLang">Selecionar foto </label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <input type="submit" name="salvar-produto" value="Salvar">
+    </div>
+
+
+  </div>
+</form>
+  
+
 
 
 </div>

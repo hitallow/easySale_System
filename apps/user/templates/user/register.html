@@ -15,6 +15,13 @@
     <form method="POST" class='d-flex flex-column '>
       {% csrf_token %} 
       <div class="row">
+          <div class="erros-list">
+            {% for erro in form.non_field_errors  %}
+              <p class="alert alert-danger erro-alert">{{erro}}</p>
+            {% endfor %}
+        </div>
+      </div>
+      <div class="row">
         <div class="form-group col-md-4 mb-3">
           <label for="form.name.id_tag"> Digite seu nome</label>
           {{form.name}}
