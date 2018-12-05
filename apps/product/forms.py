@@ -26,8 +26,11 @@ class InsertProduct(forms.ModelForm):
             'juros':CheckboxInput(),
             'maxParc':NumberInput( attrs={'min':'1','max':'24' ,'class':'form-control'}),
             'tipyDept': Select(choices=FAVORITE_COLORS_CHOICES, attrs={'class':'custom-select'}),
-            'image':FileInput(attrs={'class':'custom-file-input'})
+            'image':FileInput(attrs={'class':'custom-file-input'}),
+            'littleDescription' : TextInput(attrs={'placeholder':'digite uma pequena descrição do produto','class':'form-control', 'maxlength':'50'})
 
         }
 
 
+class SeachProduto(forms.Form):
+	nome = forms.CharField()

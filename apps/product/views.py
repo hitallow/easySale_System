@@ -11,7 +11,9 @@ def index(request):
 
 
 def listAllProducts(request):
-    produtos = Product.objects.all()
+    produtos = Product.objects.allProducts()
+
+
     context ={
         'produtos': produtos
     }
@@ -40,3 +42,10 @@ def detail(request, slug):
         'produto':produto
     }
     return render(request , 'details.html', context)
+
+def searchName(request, name):
+    produtos = Product.objects.searchName(name=name)
+    context = {
+        'produtos': produtos
+    }
+    return render(request, templantename , context)

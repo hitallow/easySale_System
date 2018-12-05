@@ -45,6 +45,16 @@
   </div>
   <div class="row">
     <div class="col-md-6">
+      <div>
+        <label for="form.littleDescription.id_for_label">Pequena descrição do produto</label>
+        {{form.littleDescription}}
+      </div>
+      
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-6">
       <div class="custom-control custom-checkbox mr-sm-2">
         <input class="custom-control-input" type="checkbox" id="{{ form.juros.id_for_label}}" name="{{form.juros.html_name}}" >
         <label class="custom-control-label" for="{{form.juros.id_for_label}}">Juros no produto</label>
