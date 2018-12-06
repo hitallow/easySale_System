@@ -26,7 +26,13 @@ def cadastrar(request):
         form = InsertProduct(request.POST)
         if (form.is_valid()):
             produto = form.save(commit=False)
+            count = 1
             produto.slug = slugify(form.cleaned_data['name'])
+            while Product.objects.all().filter(slug=produto.slug).exists():
+                count+=1
+                produto.slug = slugify(form.cleaned_data['name'])
+                produto.slug+=str(count)
+
             produto.cpfUserPost = request.user
             produto.save()
             messages.add_message(request, messages.INFO, 'Hello world.')
