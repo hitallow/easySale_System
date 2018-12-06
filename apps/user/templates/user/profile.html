@@ -3,14 +3,18 @@
 {% block contentPage %}
 <div class="container">
 	<div class="row">
-		<div class='col-md-4'>
+		<div class='col-md-3'>
 			<nav class="nav flex-column accounts-menu">
 			  <a class="nav-link active btn btn-primary" href="{% url 'user:meus-produtos' %}">Ver meus produtos</a>
 			  <a class="nav-link btn btn-primary" href="{% url 'product:cadastrar' %}">Adcionar produto</a>
 			  <a class="nav-link btn btn-primary" href="{% url 'user:editar-conta' %}">Editar conta</a>
+			  <a class="nav-link btn btn-primary" href="{% url 'user:editar-password' %}">Editar senha</a>
 			  <a class="nav-link disabled btn btn-danger" href="#">Disabled</a>
 			</nav>
-
+		</div>
+		<div class="col-md-8">
+			{% block profileContent %}
+			{% endblock%}
 		</div>
 	</div>
 </div>

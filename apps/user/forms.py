@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from django.contrib import admin
 from .models import User
 from django.forms import (
@@ -26,7 +27,8 @@ def validar_cpf(cpf: str) -> bool:
         return False
 
     return True
-
+class editAccount(forms.ModelForm):
+    pass
 class formCreation(forms.ModelForm):
     password = forms.CharField(label="Senha do lado", widget=forms.PasswordInput(attrs={'placeholder':'Sua senha', 'class':'form-control'}))
     password1 = forms.CharField(label="Confimação de senha", widget=PasswordInput(attrs={'placeholder':'Confime sua senha', 'class':'form-control'}))
@@ -65,6 +67,4 @@ class formCreation(forms.ModelForm):
             'cpf':TextInput(attrs={'class':'form-control'})
         }
 
-class editAccount(formCreation, forms.ModelForm):
-    pass
 

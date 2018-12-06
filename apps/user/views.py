@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate, login
 from easySale_System import settings
 from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
 from .forms import (formCreation, editAccount)
 
 # Views da app User.
@@ -49,11 +50,30 @@ def productOfClient(request):
     return render(request, root+'meus-produtos.html', context)
 
 def editAccount(request):
-    if request.method == 'POST':
-        print('post')
-    else: 
-        form = formCreation(instance=request.user)
     context = {
-        'form' : form
+
     }
-    return render(request, root+'register.html', context)
+    if request.method == 'POST':
+        form = formCreation(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            form = formCreation(instance=request.user)
+            context['success'] = True
+    else:
+        form = formCreation(instance=request.user)
+    context['form'] = form
+    return render(request, root+'editinformation.html', context)
+
+@login_required
+def editPassword(request):
+    context = {}
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST , user = request.user)
+        if form.is_valid():
+            form.save()
+            context['success'] = True
+
+    else:
+        form = PasswordChangeForm(user = request.user)
+    context['form'] = form
+    return render(request , root+'edit_password.html',context)

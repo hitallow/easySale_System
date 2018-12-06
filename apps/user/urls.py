@@ -10,5 +10,6 @@ urlpatterns = [
     path('sair/',views.logoutview,name='logout'),
     path('perfil/',views.dashboard, name='perfil'),
     path('ver-produtos/',views.productOfClient, name='meus-produtos'),
-    path('editar-conta/',views.editAccount, name='editar-conta')
+    path('editar-conta/',views.editAccount, name='editar-conta'),
+    path('editar-senha/',views.editPassword, name='editar-password')
 ]

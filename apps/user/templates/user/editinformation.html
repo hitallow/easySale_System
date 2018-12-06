@@ -1,0 +1,119 @@
+{% extends 'user/profile.html' %}
+{% load staticfiles %}
+{% block definitionsMeta %}
+  <title>Cadastre-se</title>
+  <script type="text/javascript" href='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js'></script>
+  
+{% endblock %}
+
+{% block profileContent %}
+
+<div class="contentPage"> 
+  <div class="container">
+    <div class="title-cadastro">
+      <h2>Edição de dados</h2>
+    </div>
+    <form method="POST" class='d-flex flex-column '>
+      {% csrf_token %} 
+      <div class="row">
+          <div class="erros-list">
+            {% for erro in form.non_field_errors  %}
+              <p class="alert alert-danger erro-alert">{{erro}}</p>
+            {% endfor %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4 mb-3">
+          <label for="form.name.id_tag"> Digite seu nome</label>
+          {{form.name}}
+        </div>
+        <div class="erros-list">
+            {% for erro in form.name.errors  %}
+              <p class="alert alert-danger erro-alert">{{erro}}</p>
+            {% endfor %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="{{form.username.id_tag}}">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            {{form.username}}
+          </div>
+          <div class="erros-list">
+              {% for erro in form.username.errors  %}
+                <p class="alert alert-danger">{{erro}}</p>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="{{form.email.id_tag}}">Endereço de e-mail</label>
+          {{form.email}}
+          <small id="emailHelp" class="form-text text-muted">Nós não compartilharemos seu endereço, fique tranquilo.</small>
+          <div class="erros-list">
+            {% for erro in form.email.errors%}
+              <p class="alert alert-danger">{{erro}}</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="{{form.cpf.id_tag}}">Seu cpf</label>
+          {{form.cpf}}
+          <small id="emailHelp" class="form-text text-muted">Verifque nossas politicas, por segurança..</small>
+          <div class="erros-list">
+              {% for erro in form.cpf.errors%}
+                <p class="alert alert-danger">{{erro}}</p>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="{{form.password.id_tag}}">Sua senha</label>
+          {{form.password}}
+          <small id="emailHelp" class="form-text text-muted">As senhas diferem de maiusculas e minusculas.</small>
+            <div class="erros-list">
+                {% for erro in form.password.errors%}
+                  <p class="alert alert-danger">{{erro}}</p>
+                {% endfor %}
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="{{form.password1.id_tag}}">Confimação de senha</label>
+          {{form.password1}}
+          <div class="erros-list">
+              {% for erro in form.password1.errors%}
+                <p class="alert alert-danger">{{erro}}</p>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-success"value="Submit">Salvar modificações </button>
+
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+<script src="{% static 'js/jquery.mask.min.js' %}"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".dropdown-trigger").dropdown();
+    $('#id_cpf').mask('000.000.000-00', {reverse: true});
+
+
+});
+</script>
+{% endblock %}
