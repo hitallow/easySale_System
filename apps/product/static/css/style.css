@@ -1,10 +1,17 @@
+
+body, html{
+	overflow-x: hidden;
+  overflow-y: scroll;
+}
 *{
 	box-sizing: border-box;
+
 }
+
 .wraper{
 
 	margin: 0px;
-	
+
 
 }
 .trasparent, .trasparent:hover{
@@ -287,4 +294,9 @@ border: 1px solid red;
 .vendas-produtos{
 	
 	border: 1px solid red;
+}
+
+.accounts-menu li{
+	margin: 5px;	
+
 }

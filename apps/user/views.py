@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate, login
 from easySale_System import settings
 from django.contrib import messages
 from .forms import (formCreation, formLogin)
+
 # Views da app User.
 root ='user/'
+from apps.product.models import (Product, CustomManager)
 
-#from django.contrib.auth import authenticate, login
 @login_required
 def logoutview(request):
     logout(request)
@@ -33,5 +33,17 @@ def register(request):
     return render(request, root+'register.html', context)
 
 
+@login_required
 def dashboard(request):
     return render(request , root+'profile.html')
+
+
+@login_required
+def productOfClient(request):
+    print('oi')
+    produtos = Product.objects.getProductsForUser(request.user)
+    print("dois")
+    context =  {
+        'produtos' : produtos
+    }
+    return render(request, 'listProducts.html', context)

@@ -8,6 +8,9 @@ class CustomManager(models.Manager):
     def allProducts(self):
         return self.all()
 
+    def getProductsForUser(self , user):
+        return self.all().filter(cpfUserPost=user)
+
 
 class Product(models.Model):
     name = models.CharField('Nome do Produto' , max_length=50)

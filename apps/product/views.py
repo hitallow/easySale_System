@@ -52,3 +52,5 @@ def searchName(request, name):
         'produtos': produtos
     }
     return render(request, templantename , context)
+
+
