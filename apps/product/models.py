@@ -21,6 +21,7 @@ class Product(models.Model):
     image = models.ImageField(verbose_name="Imagem do Produto", upload_to='product/images',null=True, blank=True )
     maxParc = models.IntegerField(verbose_name='Total de Parcelas')
     cpfUserPost = models.ForeignKey(User, on_delete=models.CASCADE)
+    totalVendas = models.IntegerField('Total vendidos',default=0)
 
     objects = CustomManager()
     def __str__(self):

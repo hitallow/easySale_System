@@ -4,7 +4,7 @@
   <title>Detalhes do produto</title>
 {% endblock%}
 {%block contentPage%}
- <div class="container">
+<div class="container">
    <div class="row">
     <div class="col-md-4">
       {% if produto.image%}
@@ -15,24 +15,35 @@
     </div>
     <div class="col-md-8">
       <div>
+        <div class="vendas-produtos">
+          <p>
+            {{produto.totalVendas}} vendidos
+          </p>
+        </div>
+        <div>
+          <h2>{{produto.name}}</h2>
+        </div>
 
-        <p>{{produto.name}}</p>
-      </div>
+        <div>
+          <h4>R${{produto.preco}}</h4>
+        </div>
 
-      <div>
-        <p>{{produto.description}}</p>
-      </div>
-      
-      <div>
-        <p>R${{produto.preco}}</p>
-      </div>
-      
-      <div>
-        <p>Vendedor: {{produto.cpfUserPost}}</p>
-      </div>
+        <div>
+          <p>em até {{produto.maxParc}} vezes de R${{produto.parcelas}}</p>
+        </div>
 
-    </div>
+
+        <div>
+          <p>{{produto.description}}</p>
+        </div>
+
+        
+        <div>
+          <p>Vendedor: {{produto.cpfUserPost}}</p>
+        </div>
+      </div>
    </div>
  </div>
+</div>
 
 {% endblock %}

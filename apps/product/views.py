@@ -40,6 +40,7 @@ def cadastrar(request):
 
 def detail(request, slug):
     produto = Product.objects.get(slug=slug)
+    produto.parcelas = round(produto.preco/produto.maxParc , 2)
     context = {
         'produto':produto
     }
