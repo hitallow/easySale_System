@@ -1,40 +1,38 @@
 {% extends 'base.html' %}
+{% load static %}
 {%block definitionsMeta%}
   <title>Detalhes do produto</title>
 {% endblock%}
 {%block contentPage%}
-  <div  class='container content-pag' style="border:1px solid black">
-     <div class="row">
-        <div class="col-sm-12 col-md-7">
-          <div>
-            {% if produto.image %}
-              <img src="{{ produto.image.url }}" />
-            {% else %}
-              <img src="https://www.google.com.br/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiIw43q-efeAhVFEZAKHf82D6QQjRx6BAgBEAU&url=https%3A%2F%2Ftiagotessmann.com.br%2Flancamentos-de-produto%2F&psig=AOvVaw0Zvj7NcTm5bzRhQJVMmOfQ&ust=1542974431520594"/>
-            {% endif %}
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-5">
-          <div>
-            <h4>
-            {{ produto.name}}
-            </h4>
-          </div>
-          <div>
-            {{ produto.description }}
-          </div>
-          <div>
-            <h4>R$ : {{ produto.preco }}</h4>
-            <h5>Dividido em até :{{ produto.maxParc }} </h5>
-          </div>
-           <div>
-             <h3>Nome do vendedor: </h3>
-             <h4 > {{ produto.cpfUserPost }}</h4>
-           </div>
-          <button type="button" class="btn btn-primary">Comprar</button>
-        </div>
-     </div>
+ <div class="container">
+   <div class="row">
+    <div class="col-md-4">
+      {% if produto.image%}
+      <img src="{{ produto.image.url}}">
+      {%else%}
+      <img src="{% static 'imagens/produtodefault.png' %}">
+      {% endif%}
+    </div>
+    <div class="col-md-8">
+      <div>
 
-  </div>
+        <p>{{produto.name}}</p>
+      </div>
+
+      <div>
+        <p>{{produto.description}}</p>
+      </div>
+      
+      <div>
+        <p>R${{produto.preco}}</p>
+      </div>
+      
+      <div>
+        <p>Vendedor: {{produto.cpfUserPost}}</p>
+      </div>
+
+    </div>
+   </div>
+ </div>
 
 {% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import (InsertProduct)
 from django.utils.text import slugify
+from django.contrib import messages
 #from django.http import HttpResponse
 # Views da app produto.
 
@@ -28,6 +29,7 @@ def cadastrar(request):
             produto.slug = slugify(form.cleaned_data['name'])
             produto.cpfUserPost = request.user
             produto.save()
+            messages.add_message(request, messages.INFO, 'Hello world.')
             return redirect('product:allProducts')
     else:
         form = InsertProduct()

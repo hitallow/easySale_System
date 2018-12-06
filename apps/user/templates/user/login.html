@@ -5,14 +5,24 @@
   <title>Faça login</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+
 {% endblock %}
 
-{% block contentPage%}
+{% block contentPage %}
+  
 
-<section class="login-block">
+<section class="">
     <div class="container">
         <div class="row">
+          
           <div class="col-md-4 login-sec">
+            {% if messages %}
+              <div class="">
+                  {% for message in messages %}
+                  <p {% if message.tags %} class='{{ message.extra_tags }}' {% endif %}>{{ message }}</p>
+                  {% endfor %}
+              </div>
+{% endif %}
               <h2 class="text-center">Faça login</h2>
               <form class="login-form" method="POST">
                 {% csrf_token %}
@@ -83,6 +93,4 @@
 </div>
 </section>
 
-
 {% endblock %}
-https://bootsnipp.com/tags/login/4

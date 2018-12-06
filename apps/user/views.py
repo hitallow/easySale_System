@@ -4,7 +4,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate, login
 from easySale_System import settings
-
+from django.contrib import messages
 from .forms import (formCreation, formLogin)
 # Views da app User.
 root ='user/'
@@ -21,6 +21,8 @@ def register(request):
         form = formCreation(request.POST)
         if form.is_valid():
             form.save()
+
+            messages.add_message(request, messages.SUCCESS, 'Cadastro feito com sucesso',extra_tags="alert alert-success")
             return redirect(settings.LOGIN_URL)
     else:
         form = formCreation()
@@ -31,37 +33,5 @@ def register(request):
     return render(request, root+'register.html', context)
 
 
-def loginInSite(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            print('sucesso')
-            login(request, user)
-            # Redirect to a success page.
-            return redirect('product:index')
-        else:
-            print("falhou")
-            # Return an 'invalid login' error message.
-            ...
-    else:
-        form = formLogin()
-        context = {
-            'form' : form
-        }
-    return render(request, root+'login.html',context)
-
-# views
-
-def my_view(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        # Redirect to a success page.
-        ...
-    else:
-        # Return an 'invalid login' error message.
-        ...
+def dashboard(request):
+    return render(request , root+'profile.html')

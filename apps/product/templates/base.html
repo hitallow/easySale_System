@@ -43,17 +43,17 @@
 			<div><h3 class="brand"> <a href="{%url 'product:index'%}">SuaCompra.</a></h3></div>
 			<div>
 				<ul class="menu-itens">
-					<li class="drop-menu"><a>Home</a></li>
+					<li ><a href="{%url 'product:index'%}">Home</a></li>
 					<li>
-						<a href="drop-menu">Departamentos</a>
+						<a class="drop-menu">Departamentos</a>
 						<ul class="sub_menu">
-							<li><a href="index.html">Computadores</a></li>
-							<li><a href="home-02.html">informatica</a></li>
-							<li><a href="home-03.html">microprocesador</a></li>
+							<li><a href="#">Computadores</a></li>
+							<li><a href="#">informatica</a></li>
+							<li><a href="#">microprocesador</a></li>
 						</ul>
 					</li>
 					<li><a>Ofertas</a></li>
-					<li><a>Contato</a></li>
+					<li><a href="{%url 'product:allProducts'%}">Produtos</a></li>
 				</ul>
 			</div>
 			<div>
@@ -65,7 +65,7 @@
 									  <button type="button" class="dropdown-toggle accounts trasparent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									  </button>
 									  <div class="dropdown-menu">
-									    <a class="dropdown-item" href="#">Perfil</a>
+									    <a class="dropdown-item" href="{% url 'user:perfil' %}">Perfil</a>
 									    <a class="dropdown-item" href="#">Ver meus produtos</a>
 									    <a class="dropdown-item" href="{% url 'product:cadastrar' %}">Cadastrar produto</a>
 									    <a class="dropdown-item" href="#">Registrar-se</a>
@@ -94,14 +94,14 @@
 		</div>
 		</div>
 	</nav>	
+</div>
 
 
-{%block contentPage%}
+{% block contentPage %}
 
 
-{%endblock%}
+{% endblock %}
 <footer class="footer-contet">
-
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
@@ -115,50 +115,48 @@
 				</div>
 			</div>
 			<div class="col-md-2">
-        <div>
-          <h5>Categorias</h5>  
-            <ul class="list-details">
-              <li><a>Para homens</a></li>
-              <li><a>Para mulheres</a></li>
-              <li><a>Para crianças</a></li>
-              <li><a>Todos</a></li>
-            </ul>
-        </div>
-				
+		        <div>
+		          <h5>Categorias</h5>  
+		            <ul class="list-details">
+		              <li><a>Para homens</a></li>
+		              <li><a>Para mulheres</a></li>
+		              <li><a>Para crianças</a></li>
+		              <li><a>Todos</a></li>
+		            </ul>
+		        </div>	
 			</div>
 			<div class="col-md-2">
-        <div>
-  				<h5>Links úteis</h5>
-          <ul class="list-details">
-              <li><a>Pesquise</a></li>
-              <li><a>contate-nos</a></li>
-              <li><a>Sobre nós</a></li>
-              <li><a>Feedback</a></li>
-          </ul>
-        </div>
+		        <div>
+		  				<h5>Links úteis</h5>
+		          <ul class="list-details">
+		              <li><a>Pesquise</a></li>
+		              <li><a>contate-nos</a></li>
+		              <li><a>Sobre nós</a></li>
+		              <li><a>Feedback</a></li>
+		          </ul>
+		        </div>
 			</div>
 			<div class="col-md-2">
-        <div>
-				  <h5>Ajuda</h5>
-          <ul class="list-details">
-            <li><a>Segurança</a></li>
-            <li><a>Sobre nós</a></li>
-            <li><a>Nossas avaliações</a></li>
-            <li><a>FAQs</a></li>
-          </ul>
-			  </div>
-      </div>
+		        <div>
+						  <h5>Ajuda</h5>
+		          <ul class="list-details">
+		            <li><a>Segurança</a></li>
+		            <li><a>Sobre nós</a></li>
+		            <li><a>Nossas avaliações</a></li>
+		            <li><a>FAQs</a></li>
+		          </ul>
+				</div>
+	      	</div>
 			<div class="col-md-3">
-        <div class="content-information">
-  				<h5>Notificações de promoções</h5>
-  				<div>
-            <label for="inscricao">se inscreva </label>
-              <input type="email" name="inscricao" placeholder="seuemail@dominio.com" id="inscricao" class="form-control">
-              <p>Nós enviaremos apenas promoções para você</p>
-          </div>
-  			</div>
-      </div>
-
+		        <div class="content-information">
+		  				<h5>Notificações de promoções</h5>
+		  				<div>
+		            <label for="inscricao">se inscreva </label>
+		              <input type="email" name="inscricao" placeholder="seuemail@dominio.com" id="inscricao" class="form-control">
+		              <p>Nós enviaremos apenas promoções para você</p>
+		          </div>
+		  		</div>
+	      	</div>
 		</div>
 	</div>
 </footer>

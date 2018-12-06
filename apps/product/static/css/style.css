@@ -92,7 +92,8 @@
 	font-family: 'Kaushan Script', cursive;
 	font-size: 30px;
 	color: blue;
-	text-decoration: none: 
+	text-decoration: none; 
+	font-weight: 800;
 }
 .nav-menu h3.brand a:hover{
 	text-decoration: none;
@@ -106,6 +107,7 @@
 	flex-wrap: wrap;
 	font-family:'Amatic SC', cursive;
 	font-size: 20px;
+	font-weight: 800;
 	font-variant: small-caps;
 }
 .menu-itens a,.menu-itens a:hover {
@@ -252,8 +254,8 @@
 	color:black !important;
 
 }
-.carousel-item{ 
-	height: 800px !important;
+.home-item-carrousel{ 
+	height: 500px !important;
 }
 
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
@@ -267,7 +269,7 @@ padding : 50px 0;
 border: 1px solid red;
 }
 .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
-.container{background:#fff; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+.container-login{background:#fff; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);margin-bottom: 40px;}
 .carousel-inner{border-radius:0 10px 10px 0;}
 .carousel-caption{text-align:left; left:5%;}
 .login-sec{padding: 50px 30px; position:relative;}
