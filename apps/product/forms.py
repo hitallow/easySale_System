@@ -18,7 +18,7 @@ class InsertProduct(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
-        exclude = ['cpfUserPost', 'slug']
+        exclude = ['cpfUserPost', 'slug', 'totalVendas']
         widgets = {
             'name': TextInput( attrs={'placeholder': 'nome do produto','class':'form-control'}),
             'description':TextInput(attrs={'placeholder':'Descrição do produto','class':'form-control'}),

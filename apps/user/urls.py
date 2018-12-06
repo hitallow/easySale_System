@@ -9,5 +9,6 @@ urlpatterns = [
     path('registrar-se/', views.register, name='register'),
     path('sair/',views.logoutview,name='logout'),
     path('perfil/',views.dashboard, name='perfil'),
-    path('ver-produtos/',views.productOfClient, name='meus-produtos')
+    path('ver-produtos/',views.productOfClient, name='meus-produtos'),
+    path('editar-conta/',views.editAccount, name='editar-conta')
 ]

@@ -6,6 +6,11 @@ from django.contrib.auth.models import (
 )
 from django.core import validators 
 import re
+
+
+
+
+
 class UserManager(BaseUserManager):
     def create_user(self, email, username, password=None,is_Admin=False):
         if not email:

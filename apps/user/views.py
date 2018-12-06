@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate, login
 from easySale_System import settings
 from django.contrib import messages
-from .forms import (formCreation, formLogin)
+from .forms import (formCreation, editAccount)
 
 # Views da app User.
 root ='user/'
@@ -46,4 +46,14 @@ def productOfClient(request):
     context =  {
         'produtos' : produtos
     }
-    return render(request, 'listProducts.html', context)
+    return render(request, root+'meus-produtos.html', context)
+
+def editAccount(request):
+    if request.method == 'POST':
+        print('post')
+    else: 
+        form = formCreation(instance=request.user)
+    context = {
+        'form' : form
+    }
+    return render(request, root+'register.html', context)

@@ -11,6 +11,9 @@ class CustomManager(models.Manager):
     def getProductsForUser(self , user):
         return self.all().filter(cpfUserPost=user)
 
+    def getSlug(self, slug):
+        return self.all().filter(slug=slug)
+
 
 class Product(models.Model):
     name = models.CharField('Nome do Produto' , max_length=50)
@@ -24,7 +27,7 @@ class Product(models.Model):
     image = models.ImageField(verbose_name="Imagem do Produto", upload_to='product/images',null=True, blank=True )
     maxParc = models.IntegerField(verbose_name='Total de Parcelas')
     cpfUserPost = models.ForeignKey(User, on_delete=models.CASCADE)
-    totalVendas = models.IntegerField('Total vendidos',default=0)
+    totalVendas = models.IntegerField('Total vendidos',default=0,null=False)
 
     objects = CustomManager()
     def __str__(self):

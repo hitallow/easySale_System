@@ -65,7 +65,6 @@ class formCreation(forms.ModelForm):
             'cpf':TextInput(attrs={'class':'form-control'})
         }
 
-class formLogin(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username','password']
+class editAccount(formCreation, forms.ModelForm):
+    pass
+

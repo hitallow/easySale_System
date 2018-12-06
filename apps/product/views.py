@@ -54,3 +54,23 @@ def searchName(request, name):
     return render(request, templantename , context)
 
 
+def editProduto(request , slug):
+    produto = Product.objects.all().filter(slug=slug).first()
+    if request.method == 'POST':
+        form = InsertProduct(request.POST ,instance=produto )
+        print(form.errors)
+        if (form.is_valid()):
+            print(' valido')
+            produto = form.save(commit=False)
+            produto.slug = slugify(form.cleaned_data['name'])
+            produto.cpfUserPost = request.user
+            produto.save()
+            messages.add_message(request, messages.INFO, 'Produto editado')
+            return redirect('product:details-product', slug=produto.slug)
+    else:
+        print('else')
+        form = InsertProduct(instance=produto)
+    context = {
+        'form': form
+    }
+    return render(request, 'cadastra.html', context)

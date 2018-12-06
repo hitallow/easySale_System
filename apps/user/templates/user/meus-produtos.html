@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contentPage %}
+	<div class="container">
+		{% for produto in produtos%}
+		<div class="row ">
+			<div class="col-md-4">
+				{% if produto.image%}
+					<img src="{{ produto.image.url }}">
+				{% else %}
+					<img src="{% static 'imagens/produtodefault.png' %}">
+				{% endif %}
+			</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-6"><h1>{{ produto.name }}</h1></div>
+					<div class="col-md-6"><h3>R${{ produto.preco}}</h3></div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						{{produto.littleDescription|linebreaks}}
+					</div>
+					<div class="col-md-12">
+						<h5>Descrição do produto:</h5> {{produto.description|linebreaks}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div><p>Máximo parcelamento {{produto.maxParc}}</p></div>
+					</div>
+					<div class="col-md-4">
+						<div><p>Departamento: {{produto.tipyDept}}</p></div>
+					</div>
+					<div class="col-md-4">
+						<div><a class="btn btn-success" href="{% url 'product:editProduct' slug=produto.get_absolute_url %}" >Editar produto </a></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+	</div>
+{% endblock %}
