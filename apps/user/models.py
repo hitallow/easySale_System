@@ -6,9 +6,7 @@ from django.contrib.auth.models import (
 )
 from django.core import validators 
 import re
-
-
-
+from apps.product.models import Product
 
 
 class UserManager(BaseUserManager):
@@ -79,5 +77,9 @@ class User(AbstractBaseUser):
 
 
 class ProdutosComprados(models.Model):
-    nome = models.TextField('nome do produto')
-    data_compra = models.DateTimeField('Data de compra')
+    user = models.ForeignKey(
+        User, verbose_name="usário que comprou",related_name="compras", on_delete=models.CASCADE
+        )
+    produto = models.ForeignKey(
+        Product, verbose_name="usário que comprou",related_name="compras", on_delete=models.CASCADE
+        )

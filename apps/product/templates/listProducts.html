@@ -31,12 +31,12 @@
         <div class="col-md-9">
             <div class="showProdutos " style="display: flex; flex-wrap: wrap">
                 {% for produto in produtos %}
-                    <div class="flex-item" style="max-width: 18rem;height: 323px;margin: 10px" >
-                        <div class="card card text-white bg-primary"    >
+                    <div class="flex-item" style="max-width: 18rem;" >
+                        <div class="card card text-white bg-primary" style="max-width: 18rem;max-height:403px;height:403px;margin: 10px">
                           {% if produto.image %}
-                          <img class="card-img-top" src="{{ produto.image.url }}" alt="Card image cap">
+                          <img class="card-img-top" src="{{ produto.image.url }}" alt="{{produto}}">
                           {% else %}
-                              <img class="card-img-top" src="https://img.itdg.com.br/tdg/images/recipes/000/169/692/146782/146782_original.jpg?mode=crop&scale=both&w=320&h=200" alt="Card image cap">
+                              <img class="card-img-top" src="{% static 'imagens/produtodefault.png' %}" alt="{{produto}}">
                           {% endif %}
                                       <div class="card-body">
                                         <h5 class="card-title">{{ produto }}</h5>

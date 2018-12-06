@@ -17,22 +17,22 @@
       {% endif%}
     </div>
     <div class="col-md-8">
-      <div>
+      <div class="detalhes-produto">
         <div class="vendas-produtos">
           <p>
             {{produto.totalVendas}} vendidos
           </p>
         </div>
-        <div>
+        <div class="name">
           <h2>{{produto.name}}</h2>
         </div>
 
-        <div>
-          <h4>R${{produto.preco}}</h4>
+        <div class="preco">
+          <p>R$</p><h4>{{produto.preco}}</h4>
         </div>
 
         <div>
-          <p>em até {{produto.maxParc}} vezes de R${{produto.parcelas}}</p>
+          <p>em até {{produto.maxParc}}x de R${{produto.parcelas}}</p>
         </div>
 
 
@@ -41,9 +41,10 @@
         </div>
 
         
-        <div>
+        <div class="vendedor">
           <p>Vendedor: {{produto.cpfUserPost}}</p>
         </div>
+        <div><button class="btn btn-primary">Comprar</button></div>
       </div>
    </div>
  </div>

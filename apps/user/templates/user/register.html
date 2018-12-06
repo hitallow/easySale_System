@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block contentPage%}
+
 <div class="contentPage"> 
   <div class="container">
     <div class="title-cadastro">
@@ -107,4 +108,12 @@
 
 
 <script src="{% static 'js/jquery.mask.min.js' %}"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".dropdown-trigger").dropdown();
+    $('#id_cpf').mask('000.000.000-00', {reverse: true});
+
+
+});
+</script>
 {% endblock %}

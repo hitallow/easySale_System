@@ -1,7 +1,7 @@
 
 body, html{
 	overflow-x: hidden;
-  overflow-y: scroll;
+  	
 }
 *{
 	box-sizing: border-box;
@@ -292,11 +292,27 @@ border: 1px solid red;
 .banner-text p{color:#fff;}
 
 .vendas-produtos{
-	
-	border: 1px solid red;
+	font-size: 12px;
+	color: gray;
 }
-
-.accounts-menu li{
+.detalhes-produto .preco{
+	display: flex;
+}
+.detalhes-produto .preco p{
+	font-size: 13px;
+	color: rgba(0, 0, 0, .7);
+}
+.detalhes-produto .preco h4{
+	font-weight: 600;
+}
+.accounts-menu a{
 	margin: 5px;	
 
+}
+.detalhes-produto .name h2{
+	font-weight: 600;
+}
+.detalhes-produto .vendedor p{
+	font-weight: 600;
+	font-size: 13px;
 }

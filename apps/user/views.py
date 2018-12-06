@@ -22,7 +22,7 @@ def register(request):
         if form.is_valid():
             form.save()
 
-            messages.add_message(request, messages.SUCCESS, 'Cadastro feito com sucesso',extra_tags="alert alert-success")
+            messages.add_message(request, messages.SUCCESS, 'Cadastro feito com sucesso, faça login',extra_tags="alert alert-success")
             return redirect(settings.LOGIN_URL)
     else:
         form = formCreation()

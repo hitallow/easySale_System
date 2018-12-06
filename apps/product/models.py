@@ -1,10 +1,13 @@
-from django.db import models
-from apps.user.models import User
 
-# Modelos da app produto.
+from django.db import models
+from django.contrib.auth.models import User
+from easySale_System import settings
+
 class CustomManager(models.Manager):
+
     def getForName(self, name):
         return self.all().filter(name=name)
+
     def allProducts(self):
         return self.all()
 
@@ -26,7 +29,7 @@ class Product(models.Model):
     juros = models.BooleanField( null=False , blank=False)
     image = models.ImageField(verbose_name="Imagem do Produto", upload_to='product/images',null=True, blank=True )
     maxParc = models.IntegerField(verbose_name='Total de Parcelas')
-    cpfUserPost = models.ForeignKey(User, on_delete=models.CASCADE)
+    cpfUserPost = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     totalVendas = models.IntegerField('Total vendidos',default=0,null=False)
 
     objects = CustomManager()
@@ -48,7 +51,6 @@ class Coment(models.Model):
     nota = models.DecimalField('Nota', max_digits=10,decimal_places=1)
     title = models.TextField("Titulo do comentario",max_length=50)
     produto = models.ForeignKey(Product, on_delete=models.CASCADE)
-
     def __str__(self):
         return self.title
     class Meta:
