@@ -24,6 +24,8 @@ Essas bibliotecas foram utilizadas para o gerenciamento
 </ul>
 </br>
 Para instalar todos esses pacotes, rode no seu terminal > <code>pip install -r requirements.txt</code> 
+
+</br<
 # Funcionalidades
 <ul>
     <li>Cadastro de usuários: Funcionando</li>
@@ -35,3 +37,17 @@ Para instalar todos esses pacotes, rode no seu terminal > <code>pip install -r r
     <li>Comentário em produto: a fazer</li>
     <li>Compra de produtos: a fazer</li>
 </ul>
+
+# Antes de começar
+Antes de começar a utilizar, siga esses passos na pasta onde o projeto foi clonado:
+<ol>
+    <li><code>python manage.py makemigrations</code></li>
+    <li><code>python manage.py migrate</code></li>
+</ol>
+Este código cria e prepara o banco de dados.
+
+# Rodando o projeto
+Na pasta do do projeto rode em seu terminal: <code>python manage.py runserver</code> logo após vá até o seu navegador de preferência e coloque na barra de endereço <code>localhost:8000</code>, agora você tem acesso ao site.
+
+# Criando um administrador do sistema
+Caso tenha interesse em criar um administrador, na pasta raiz, rode <code>python manage.py createsuperuser</code>, logo após forneça todos os dados, e depois de criar um administador vá a sua barra de pesquisa e coloque <code>localhost:8000/admin</code>, faça o login com os dados criados anteriormente, agora você tem acesso a todas as informações do sistema, podem realizar qualquer alteração! (<strong>cuidado</strong> alterações no admnistrador, afetam os usuários normais)
