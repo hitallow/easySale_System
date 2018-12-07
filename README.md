@@ -7,8 +7,8 @@
  As linguagens utilizadas neste projeto são:<br/>
   CSS (junto com Bootstrap);<br/>
   HTML;<br/>
-  Python (Django) ;<br/>
-  SLQLite (inegrado com o Django)<br/>
+  Python (com Django) ;<br/>
+  SLQLite (integrado com o Django)<br/>
   Javascript ( com Jquery);<br/>
 <br>
 # Django
@@ -23,9 +23,10 @@ Essas bibliotecas foram utilizadas para o gerenciamento
     <li>Biblioteca Pillow (obrigatório)</li>
 </ul>
 </br>
-Para instalar todos esses pacotes, rode no seu terminal > <codec pip install -r requirements.txt</code> 
+Para instalar todos esses pacotes, rode no seu terminal > <code> $ pip install -r requirements.txt </code> 
 
-</br<
+<br/>
+
 # Funcionalidades
 <ul>
     <li>Cadastro de usuários: Funcionando</li>
