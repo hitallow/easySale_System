@@ -35,7 +35,7 @@ def cadastrar(request):
 
             produto.cpfUserPost = request.user
             produto.save()
-            messages.add_message(request, messages.INFO, 'Hello world.')
+            messages.add_message(request, messages.SUCCESS, 'PRODUTO CADASTRADO.')
             return redirect('product:allProducts')
     else:
         form = InsertProduct()
