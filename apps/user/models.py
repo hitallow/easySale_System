@@ -78,7 +78,7 @@ class User(AbstractBaseUser):
 
 class ProdutosComprados(models.Model):
     user = models.ForeignKey(
-        User, verbose_name="usário que comprou",related_name="compras", on_delete=models.CASCADE
+        User, verbose_name="usuário que comprou",related_name="compras", on_delete=models.CASCADE
         )
     produto = models.ForeignKey(
         Product, verbose_name="usário que comprou",related_name="compras", on_delete=models.CASCADE

@@ -13,15 +13,7 @@ $(document).ready(function() {
 });
 
 
-$(function(){
-    if ($("#modal-information").length){ 
-        console.log("O elemento existe no DOM");
-     
-    }else {
- 
-        console.log("Ops! Elemento não existe no DOM");
- 
-    }    });
+
 $(function(){
     var SetCarouselHeight = function() {
         $("#carouselExampleIndicators .item > img").height(function(){

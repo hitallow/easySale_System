@@ -79,4 +79,4 @@ def editProduto(request , slug):
     context = {
         'form': form
     }
-    return render(request, 'cadastra.html', context)
+    return render(request, 'edit-produtt.html', context)
