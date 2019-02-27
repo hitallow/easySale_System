@@ -27,8 +27,8 @@ def validar_cpf(cpf: str) -> bool:
         return False
 
     return True
-class editAccount(forms.ModelForm):
-    pass
+
+
 class formCreation(forms.ModelForm):
     password = forms.CharField(label="Senha do lado", widget=forms.PasswordInput(attrs={'placeholder':'Sua senha', 'class':'form-control'}))
     password1 = forms.CharField(label="Confimação de senha", widget=PasswordInput(attrs={'placeholder':'Confime sua senha', 'class':'form-control'}))
@@ -67,4 +67,9 @@ class formCreation(forms.ModelForm):
             'cpf':TextInput(attrs={'class':'form-control'})
         }
 
+class editAccount(forms.Form):
+    email = forms.EmailField(label='Email ', required=False)
+    username = forms.CharField(label='username',required=False)
+    cpf = forms.DecimalField(label='CPF')
+    
 
