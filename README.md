@@ -5,16 +5,19 @@
  Projeto está sendo desenvolvido com o framework Django para o back-end,e para o front-end está sendo o utilizado o Bootstrap CSS
  Junto com Jquery.
  As linguagens utilizadas neste projeto são:<br/>
-  CSS (junto com Bootstrap);<br/>
-  HTML;<br/>
-  Python (com Django) ;<br/>
-  SLQLite (integrado com o Django)<br/>
-  Javascript ( com Jquery);<br/>
-<br>
+ <ul>
+  <li>CSS (junto com Bootstrap);</li>
+  <li>HTML;</li>
+  <li> Python (com Django) ;</li>
+  <li>SLQLite (integrado com o Django)</li>
+  <li>Javascript ( com Jquery);</li>
+    </ul>
+<br/>
 # Django
 O django utiza a estrutra MVC(MVT), os models abstraem todo a informação que o sistema deve conter, as views fazem o trabalho árduo de comunição entre o cliente e o servidor, fazendo toda a lógica do sistema, os templates rederizam e mostram os resultados obtidos nas views e as URLs interligam as VIEWs com os templates.
 Como o django por padrão já é integrado com o banco de dados, não é nescessário realizar uma consulta SQL no banco de dados de forma direta ( claro, se houver a necessidade, isto pode ser feito), tudo pode ser feito atráves de <code>manager's</code> 
 <br>
+
 # REQUERIDO
 Essas bibliotecas foram utilizadas para o gerenciamento
 <ul>
