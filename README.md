@@ -1,6 +1,6 @@
 # easySale_System
  this is a project of an online sales system, organized in the MVC architecture, in view of the WEB Programming discipline
- <h3> abstract </h3>
+ <h3> Abstract(resumo) </h3>
  <p>
  Este projeto faz parte da avaliação final da disciplina de "Programação Web - DCT1109" do curso de Sistemas de Informação da UFRN.
     Tem como objetivo central, aprender algumas funcionalidades do framework Django e usar ferramentas e linguagens voltadas para a programação web.
@@ -22,7 +22,8 @@
     </ul>
 <br/>
 </p>
-# Django
+<br/>
+# Django <br>
 O django utiza a estrutra MVC(MVT), os models abstraem todo a informação que o sistema deve conter, as views fazem o trabalho árduo de comunição entre o cliente e o servidor, fazendo toda a lógica do sistema, os templates rederizam e mostram os resultados obtidos nas views e as URLs interligam as VIEWs com os templates.
 Como o django por padrão já é integrado com o banco de dados, não é nescessário realizar uma consulta SQL no banco de dados de forma direta ( claro, se houver a necessidade, isto pode ser feito), tudo pode ser feito atráves de <code>manager's</code> 
 <br>
